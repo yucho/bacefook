@@ -1,7 +1,7 @@
 require "bcrypt"
 
 class User < ApplicationRecord
-  include Authenticatable
+  include Authable
   include Utility::SanityChecker
 
   validates :password_digest, presence: true
@@ -16,8 +16,10 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
 
   def self.find_by_credential(email_or_phone, password)
-    User.find_by(email: email_or_phone, password: password) ||
-    User.find_by(phone: email_or_phone, password: password)
+    user = User.find_by(email: email_or_phone) || User.find_by(phone: email_or_phone)
+    return user if user.is_password?(password)
+
+    nil # throw UserNotFound error?
   end
 
   def password=(password)
