@@ -1,6 +1,4 @@
-module Authentication
-  extend ActiveSupport::Concern
-
+module Authenticatable
   def generate_session_token
     SecureRandom::urlsafe_base64
   end
