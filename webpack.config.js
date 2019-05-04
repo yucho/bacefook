@@ -1,15 +1,17 @@
-path = require('path');
+const path = require('path');
+const root = (...args) => path.resolve(__dirname, ...args);
+const frontend = (...args) => root('frontend', ...args);
 
 module.exports = {
-  entry: path.resolve(__dirname, 'frontend', 'main.jsx'),
+  entry: frontend('main.jsx'),
   output: {
-    path: path.resolve(__dirname, 'app', 'assets', 'javascripts')
+    path: root('app', 'assets', 'javascripts')
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
-        include: path.resolve(__dirname, 'frontend'),
+        include: frontend(),
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
@@ -23,7 +25,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '*'],
     alias: {
-      components: path.resolve(__dirname, 'frontend', 'components')
+      components: frontend('components')
     }
   },
   devtool: 'inline-source-map'
