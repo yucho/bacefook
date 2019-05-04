@@ -65,5 +65,8 @@ yarn-debug.log*
 /storage/*
 !/storage/.keep
 
+# Ignore webpack bundle
+/app/assets/javascripts/main.js
+
 # OS X garbage
 .DS_Store

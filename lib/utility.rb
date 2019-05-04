@@ -1,9 +1,5 @@
 module Utility
   module SanityChecker
-    def os(**hash)
-      OpenStruct.new(hash)
-    end
-
     def valid_email?(address_str)
       !! address_str.strip.match(/\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i)
     end
