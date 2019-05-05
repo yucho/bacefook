@@ -25,7 +25,12 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.jsx', '*'],
     alias: {
-      components: frontend('components')
+      actions: frontend('actions'),
+      components: frontend('components'),
+      middleware: frontend('middleware'),
+      reducers: frontend('reducers'),
+      store: frontend('store'),
+      utils: frontend('utils')
     }
   },
   devtool: 'inline-source-map'
