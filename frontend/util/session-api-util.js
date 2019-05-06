@@ -1,4 +1,4 @@
-import xhrRequest from 'utils/xhr-request';
+import xhrRequest from 'util/xhr-request';
 
 export const requestSignup = user => (
   xhrRequest({
@@ -16,10 +16,9 @@ export const requestLogin = session => (
   })
 );
 
-export const requestLogout = session => (
+export const requestLogout = () => (
   xhrRequest({
     url:'api/session',
-    method: 'DELETE',
-    data: { session }
+    method: 'DELETE'
   })
 );

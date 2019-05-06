@@ -30,7 +30,7 @@ module.exports = {
       middleware: frontend('middleware'),
       reducers: frontend('reducers'),
       store: frontend('store'),
-      utils: frontend('utils')
+      util: frontend('util')
     }
   },
   devtool: 'inline-source-map'

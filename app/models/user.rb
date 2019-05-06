@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   def self.find_by_credential(email_or_phone, password)
     user = User.find_by(email: email_or_phone) || User.find_by(phone: email_or_phone)
-    return user if user.is_password?(password)
+    return user if user && user.is_password?(password)
 
     nil # throw UserNotFound error?
   end

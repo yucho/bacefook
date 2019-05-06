@@ -3,13 +3,17 @@ class Api::SessionsController < ApplicationController
 
   def create
     @user = User.find_by_credential(session_params[:email_or_phone], session_params[:password])
-    login(@user)
-    render "api/users/index"
+    if @user
+      login(@user)
+      render "api/users/index"
+    else
+      render json: { errors: ["Invalid credentials"] }, status: :unprocessable_entity
+    end
   end
 
   def destroy
     logout!
-    render "api/users/index"
+    render json: {}
   end
 
 
