@@ -2,7 +2,7 @@ const defaults = {
   method: 'GET',
   data: {},
   headers: { 'Content-type': 'application/json' },
-  //responseType: 'json',
+  responseType: 'json',
   withCredentials: true
 };
 

@@ -1,13 +1,13 @@
 class Api::UsersController < ApplicationController
+  include QueryableController
   include AuthableController
 
   def create
     @user = User.new(email_or_phone: new_user_params[:email_or_phone], password: new_user_params[:password])
-    @user.save
-    login(@user)
-    # Add error handling - UniqueViolation, NullViolation, etc.
-
-    render :index
+    if @user.save!
+      login(@user)
+      append_json_response currentUser: current_user.uuid
+    end
   end
 
   private

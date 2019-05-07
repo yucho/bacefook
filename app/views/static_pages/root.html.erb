@@ -1,1 +1,21 @@
+<% script = "" %>
+<%
+if logged_in?
+script += <<-JS
+  window.currentUser = #{current_user.uuid}
+JS
+end
+if true
+script += <<-JS
+  window.requestedPath = '#{request.env['PATH_INFO']}'
+JS
+end
+%>
+
+<% unless script.empty? %>
+<script>
+<%= script.html_safe %>
+</script>
+<% end %>
+
 <div id="root">React is broken</div>

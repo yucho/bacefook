@@ -28,9 +28,9 @@ export const logout = () => dispatch => {
     );
 };
 
-const receiveCurrentUser = user => ({
+const receiveCurrentUser = ({ currentUser }) => ({
   type: RECEIVE_CURRENT_USER,
-  user
+  currentUser
 });
 
 const logoutCurrentUser= session => ({
