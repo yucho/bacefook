@@ -25,5 +25,8 @@ module Bacefook
       generate.assets false
       generate.view_specs false
     end
+
+    # Load vendor image assets
+    config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
   end
 end

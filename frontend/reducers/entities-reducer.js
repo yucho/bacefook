@@ -6,7 +6,8 @@ import errorsReducer from 'reducers/errors-reducer';
 const entitiesReducer = combineReducers({
   users: usersReducer,
   session: sessionReducer,
-  errors: errorsReducer
+  errors: errorsReducer,
+  images: (state={}) => state
 });
 
 export default entitiesReducer;
