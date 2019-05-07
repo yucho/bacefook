@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import LoginForm from 'components/login-form';
 
 const Splash = props => {
   const logo = useSelector(({images}) => images['splash-logo']);
@@ -8,7 +9,7 @@ const Splash = props => {
     <>
       <header className="splash-outer splash-header">
         <img className="splash-logo" src={logo} alt="Bacefook" />
-        <form className="login-form">Log in form</form>
+        <LoginForm className="login-form" />
       </header>
       <main className="splash-outer splash-main">
         <section className="splash-welcome">

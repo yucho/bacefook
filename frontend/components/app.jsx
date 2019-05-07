@@ -1,11 +1,15 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Route } from 'react-router-dom';
 import { sessionId } from 'reducers/selectors';
 import Splash from 'components/splash';
 
+// Tentative
+import { logout } from 'actions/session-actions';
+
 const App = ({ session, match, history }) => {
   const currentUserId = useSelector(sessionId);
+  const dispatch = useDispatch();
 
   if(!currentUserId) {
     return <Splash />
@@ -13,7 +17,7 @@ const App = ({ session, match, history }) => {
 
   return (
   <>
-    <Route path="/" render={() => (<div>Logged in</div>)} />
+    <Route path="/" render={() => (<div>Logged in! <button onClick={() => dispatch(logout())} >Log Out</button></div>)} />
   </>
 )};
 
