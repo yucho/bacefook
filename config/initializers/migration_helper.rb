@@ -4,7 +4,7 @@ module MigrationHelper
   def add_max_length(table, arr_cn_len)
     reversible do |dir|
       dir.up do
-        sanitized_arr = (arr_cn_len.length == 1) ? [arr_cn_len] : arr_cn_len
+        sanitized_arr = arr_cn_len[0].is_a?(Array) ?  arr_cn_len : [arr_cn_len]
         execute sql_add_max_length(table, sanitized_arr)
       end
       dir.down do

@@ -16,6 +16,15 @@ def UsersFactory(users_attrs)
   users_attrs.each { |user_attrs| UserFactory(user_attrs) }
 end
 
+def PostFactory(attrs)
+  attr_names = [:postable, :body, :published_at]
+  Post.create!(attr_names.each.with_index.with_object({}) { |(name, i), memo| memo[name] = attrs[i] })
+end
+
+def PostsFactory(posts_attrs)
+  posts_attrs.each { |post_attrs| PostFactory(post_attrs) }
+end
+
 def DecimateAllExistence!
   [User].each &:delete_all
 end
@@ -27,4 +36,9 @@ UsersFactory([
   ["Parry", "Hotter", "photter@hogwarts.com", "hotterhotter", "1980/7/31", "male"],
   ["BpongeSob", "PquareSants", "spongey@krustykrabs.com", "jellyfish4ever", "1986/7/14", "male"],
   ["Hucho", "Yo", "yucho.ho@gmail.com", "hunter12", "1989/2/12", "male"]
+])
+
+PostsFactory([
+  [User.find_by(first_name: "Parry"), "Until the very end.", nil],
+  [User.find_by(first_name: "BpongeSob"), "Imagination.", nil]
 ])

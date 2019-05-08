@@ -11,6 +11,8 @@ class User < ApplicationRecord
   with_options if: ->{ email_or_phone.nil? } do validate :valid_or_nil_email, :valid_or_nil_phone end
   validates :email, :phone, allow_nil: true, uniqueness: true
 
+  has_many :posts, as: :postable
+
   attr_reader :password, :email_or_phone
 
   after_initialize :ensure_session_token
