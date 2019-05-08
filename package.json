@@ -4,7 +4,7 @@
   "scripts": {
     "postinstall": "webpack",
     "start": "webpack --watch --mode=development",
-    "test": "say fuck you"
+    "test": "say hello"
   },
   "dependencies": {
     "@babel/core": "^7.4.4",
@@ -20,5 +20,9 @@
     "redux-logger": "^3.0.6",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.1"
+  },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
   }
 }

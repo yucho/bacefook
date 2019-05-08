@@ -2,7 +2,7 @@ import React, { useState, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
-import { signup } from 'actions/session-actions';
+import { signup, login } from 'actions/session-actions';
 
 const SignupForm = ({ className }) => {
   const [first_name, setFirstName] = useState('');
@@ -17,7 +17,8 @@ const SignupForm = ({ className }) => {
   const dispatch = useDispatch();
   const submit = useCallback(() => dispatch(signup({ first_name, last_name,
     email_or_phone, password, birthday: `${birthYear}/${birthMonth}/${birthDate}`, gender
-  })), [first_name, last_name, email_or_phone, password, birthYear, birthMonth, birthDate, gender])
+  })), [first_name, last_name, email_or_phone, password, birthYear, birthMonth, birthDate, gender]);
+  const demoLogin = () => dispatch(login({email_or_phone: "photter@hogwarts.com", password: "hotterhotter"}));
 
   return (
     <>
@@ -44,7 +45,7 @@ const SignupForm = ({ className }) => {
         </fieldset>
         <p className="signup-form-terms">By clicking Sign Up, you agree to our <Link to="/">Germs</Link>, <Link to="/">Pata Dolicy</Link> and <Link to="/">Crackers Policy</Link>. You may receive SMH Notifications from us and can opt out any time.</p>
         <input type="submit" value="Sign Up" />
-        <input type="submit" value="Demo Login" />
+        <input type="submit" value="Demo Login" onClick={handleSubmit(demoLogin)} />
       </form>
     </>
   );
