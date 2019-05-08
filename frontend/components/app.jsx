@@ -17,7 +17,7 @@ const App = ({ session, match, history }) => {
 
   return (
   <>
-    <Route path="/" render={() => (<div>Logged in! <button onClick={() => dispatch(logout())} >Log Out</button></div>)} />
+    <Route path="/" render={() => (<div style={{margin: '20px auto', padding: '20px', width: '300px', border: '1px dotted black', textAlign: 'center'}}>Logged in! <button onClick={() => dispatch(logout())} >Log Out</button></div>)} />
   </>
 )};
 

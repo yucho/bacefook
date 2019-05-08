@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import LoginForm from 'components/login-form';
+import SignupForm from 'components/signup-form';
 
 const Splash = props => {
   const logo = useSelector(({images}) => images['splash-logo']);
@@ -20,15 +22,14 @@ const Splash = props => {
             <li><span className="splash-welcome-emphasis">Find more</span> of what you're looking for with Facebook Search.</li>
           </ul>
         </section>
-        <aside className="signup-form">
-          <h1>Create a New Account</h1>
-          <p>It’s free and always will be.</p>
+        <aside className="signup-form-container">
+          <SignupForm className="signup-form" />
         </aside>
       </main>
       <footer className="splash-outer splash-footer">
         <ul className="splash-footer-nav">
-          <li>Sign Up</li>
-          <li>Log In</li>
+          <li><Link to="/">Sign Up</Link></li>
+          <li><Link to="/">Log In</Link></li>
         </ul>
       </footer>
     </>
