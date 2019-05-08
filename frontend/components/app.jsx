@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Route } from 'react-router-dom';
 import { sessionId } from 'reducers/selectors';
 import Splash from 'components/splash';
+import Header from 'components/header';
 
 // Tentative
 import { logout } from 'actions/session-actions';
@@ -12,12 +13,19 @@ const App = ({ session, match, history }) => {
   const dispatch = useDispatch();
 
   if(!currentUserId) {
+    document.body.classList.remove("logged-in");
     return <Splash />
+  }else {
+    document.body.classList.add("logged-in");
   }
 
   return (
   <>
-    <Route path="/" render={() => (<div style={{margin: '20px auto', padding: '20px', width: '300px', border: '1px dotted black', textAlign: 'center'}}>Logged in! <button onClick={() => dispatch(logout())} >Log Out</button></div>)} />
+    <Header />
+    <Route path="/" >
+      <main className="main-content-news-feed">
+      </main>
+    </Route>
   </>
 )};
 
