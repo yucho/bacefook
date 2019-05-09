@@ -1,5 +1,6 @@
 module AuthableController
-  include ActiveSupport::Concern
+  extend ActiveSupport::Concern
+
   def login(user)
     session[:session_token] = user.session_token
   end

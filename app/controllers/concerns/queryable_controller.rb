@@ -1,9 +1,11 @@
+# Note: any controller that includes this module will have default render
+# overriden by render_json method. Set @query to pass information and define
+# here what your controller should render
+
 module QueryableController
   extend ActiveSupport::Concern
 
   def render_json(query={})
-    return if performed?
-
     return render json: { errors: ["You must log in"] } unless logged_in?
 
     initialize_query_response(query)    
@@ -55,7 +57,7 @@ module QueryableController
     def news_feed(user)
       {
         users: User.all.as_json(only: [:id, :first_name, :last_name, :email, :phone, :posts]),
-        posts: Post.all.as_json(only: [:id, :body, :postable_id, :postable_type])
+        posts: Post.all.as_json(only: [:id, :body, :poster_id, :poster_type, :postable_id, :postable_type])
       }
     end
 end

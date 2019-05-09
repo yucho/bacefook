@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_07_234059) do
+ActiveRecord::Schema.define(version: 2019_05_09_020603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,7 +22,10 @@ ActiveRecord::Schema.define(version: 2019_05_07_234059) do
     t.datetime "published_at", default: -> { "CURRENT_TIMESTAMP" }
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "poster_type", null: false
+    t.bigint "poster_id", null: false
     t.index ["postable_type", "postable_id"], name: "index_posts_on_postable_type_and_postable_id"
+    t.index ["poster_type", "poster_id"], name: "index_posts_on_poster_type_and_poster_id"
   end
 
   create_table "users", force: :cascade do |t|

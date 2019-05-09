@@ -1,6 +1,5 @@
 class Api::SessionsController < ApplicationController
-  include QueryableController
-  include AuthableController
+  include QueryableController, AuthableController
 
   def create
     @user = User.find_by_credential(session_params[:email_or_phone], session_params[:password])

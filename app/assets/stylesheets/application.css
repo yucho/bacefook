@@ -25,8 +25,20 @@
 }
 
 .main-content-news-feed {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   width: 1012px;
-  margin: 0 auto;
-  grid-template-columns: 1fr 2.5fr 1.5fr;
+  margin: 12px auto 0;
+}
+
+.main-content-sidebar {
+  width: 180px;
+}
+
+.main-content-main-section {
+  width: 500px;
+}
+
+.main-content-extra {
+  width: 308px;
 }

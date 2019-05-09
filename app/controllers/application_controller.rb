@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   skip_before_action :verify_authenticity_token
+
   rescue_from StandardError, with: :error_handler
 
   helper_method :current_user, :logged_in?

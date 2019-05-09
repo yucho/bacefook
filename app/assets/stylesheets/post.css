@@ -1,0 +1,26 @@
+.post-container {
+  background: #fff;
+  border: 1px solid #e9ebee;
+  border-radius: 6px;
+  margin-bottom: 12px;
+  padding: 12px;
+}
+
+.post-author {
+  margin-left: 12px;
+}
+
+.post-likes-and-comments {
+  color: #606770;
+  margin: 4px 0;
+  border-top: 1px solid #dadde1;
+}
+
+.post-likes-and-comments > ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}

@@ -1,6 +1,5 @@
 class Api::UsersController < ApplicationController
-  include QueryableController
-  include AuthableController
+  include QueryableController, AuthableController
 
   def create
     @user = User.new(new_user_params)

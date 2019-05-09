@@ -17,7 +17,7 @@ def UsersFactory(users_attrs)
 end
 
 def PostFactory(attrs)
-  attr_names = [:postable, :body, :published_at]
+  attr_names = [:poster, :postable, :body, :published_at]
   Post.create!(attr_names.each.with_index.with_object({}) { |(name, i), memo| memo[name] = attrs[i] })
 end
 
@@ -38,7 +38,11 @@ UsersFactory([
   ["Hucho", "Yo", "yucho.ho@gmail.com", "hunter12", "1989/2/12", "male"]
 ])
 
+parry = User.find_by(first_name: "Parry")
+bpongesob = User.find_by(first_name: "BpongeSob")
+
 PostsFactory([
-  [User.find_by(first_name: "Parry"), "Until the very end.", nil],
-  [User.find_by(first_name: "BpongeSob"), "Imagination.", nil]
+  [parry, parry, "Until the very end.", nil],
+  [bpongesob, bpongesob, "Imagination.", nil],
+  [parry, bpongesob, "Hello, Spon... BpongeSob!", nil]
 ])

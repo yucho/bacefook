@@ -1,7 +1,7 @@
 require "bcrypt"
 
 class User < ApplicationRecord
-  include Authable
+  include AuthableModel, PosterModel, PostableModel
   include Utility::SanityChecker
 
   validates :password_digest, presence: true
@@ -10,8 +10,6 @@ class User < ApplicationRecord
   validate :valid_email_or_phone
   with_options if: ->{ email_or_phone.nil? } do validate :valid_or_nil_email, :valid_or_nil_phone end
   validates :email, :phone, allow_nil: true, uniqueness: true
-
-  has_many :posts, as: :postable
 
   attr_reader :password, :email_or_phone
 

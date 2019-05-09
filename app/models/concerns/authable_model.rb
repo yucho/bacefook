@@ -1,5 +1,5 @@
-module Authable
-  include ActiveSupport::Concern
+module AuthableModel
+  extend ActiveSupport::Concern
 
   def generate_session_token
     SecureRandom::urlsafe_base64
