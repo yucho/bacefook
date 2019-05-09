@@ -80,8 +80,33 @@
   line-height: 36px;
 }
 
-.splash-welcome-emphasis {
+.splash-welcome ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.splash-welcome li {
+  padding-top: 30px;
+}
+
+.splash-welcome li > * {
+  vertical-align: middle;
+}
+
+.splash-welcome i {
+  font-size: 56px;
+  padding-right: 20px;
+  color:#aabbca;
+}
+
+.splash-welcome span {
+  color: #737373;
+}
+
+.splash-welcome .splash-welcome-emphasis {
   font-weight: bold;
+  color: #000;
 }
 
 .splash-footer {

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import LoginForm from 'components/login-form';
 import SignupForm from 'components/signup-form';
+import Icon from 'components/icon';
 
 const Splash = props => {
   const logo = useSelector(({images}) => images['splash-logo']);
@@ -17,9 +18,21 @@ const Splash = props => {
         <section className="splash-welcome">
           <h1>Connect with wriends and the <br/>forld around you on Bacefook.</h1>
           <ul>
-            <li><span className="splash-welcome-emphasis">See photos and updates</span> from friends in News Feed.</li>
-            <li><span className="splash-welcome-emphasis">Share what's new</span> in your life on your Timeline.</li>
-            <li><span className="splash-welcome-emphasis">Find more</span> of what you're looking for with Facebook Search.</li>
+            <li>
+              <Icon name="chrome_reader_mode" appendClasses="md_48" />
+              <span><span className="splash-welcome-emphasis">See photos and updates</span> from
+              friends in News Feed.</span>
+            </li>
+            <li>
+              <Icon name="stars" appendClasses="md_48" />
+              <span><span className="splash-welcome-emphasis">Share what's new</span> in
+              your life on your Timeline.</span>
+            </li>
+            <li>
+              <Icon name="search" appendClasses="md_48" />
+              <span><span className="splash-welcome-emphasis">Find more</span> of
+              what you're looking for with Facebook Search.</span>
+            </li>
           </ul>
         </section>
         <aside className="signup-form-container">

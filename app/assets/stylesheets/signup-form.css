@@ -1,5 +1,15 @@
 .signup-form-container > h1{
   font-size: 36px;
+  margin-bottom: 0;
+}
+
+.signup-form-container > p {
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.signup-form-container > p > * {
+  vertical-align: middle;
 }
 
 .signup-form > input {

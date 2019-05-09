@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import { signup, login } from 'actions/session-actions';
+import Icon from 'components/icon';
 
 const SignupForm = () => {
   const [first_name, setFirstName] = useState('');
@@ -97,7 +98,7 @@ const SignupForm = () => {
   return (
     <section className="signup-form-container">
       <h1>Create a New Account</h1>
-      <p>It’s free and always will be.</p>
+      <p><span>It’s free and always will be.</span><Icon name="face" appendClasses="md-24"/></p>
 
       <form onSubmit={handleSubmit(submit)} className="signup-form">
         <input type="text" placeholder="First name" value={first_name}
