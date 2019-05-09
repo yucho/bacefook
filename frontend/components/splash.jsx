@@ -27,10 +27,14 @@ const Splash = props => {
         </aside>
       </main>
       <footer className="splash-outer splash-footer">
+        <ul className="splash-footer-locale">
+          <li>English (US)</li>
+        </ul>
         <ul className="splash-footer-nav">
           <li><Link to="/">Sign Up</Link></li>
           <li><Link to="/">Log In</Link></li>
         </ul>
+        <small className="splash-footer-copyright">Bacefook &#9728; 2019</small>
       </footer>
     </>
   )
