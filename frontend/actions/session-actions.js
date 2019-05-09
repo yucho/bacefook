@@ -8,7 +8,10 @@ export const RECEIVE_SESSION_ERROR = 'RECEIVE_SESSION_ERROR';
 export const signup = user => dispatch => {
   SessionAPIUtil.requestSignup(user)
     .then(
-      success => dispatch(receiveCurrentUser(success)),
+      success => {
+        dispatch(receiveCurrentUser(success));
+        dispatch(receiveAllData(success));
+      },
       error => dispatch(receiveSessionError(error))
     );
 };
