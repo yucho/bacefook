@@ -18,6 +18,17 @@
 /* Prototyping */
 * {
   box-sizing: border-box;
+  font-family: "Freight Sans Bold", "San Francisco", "Roboto", "Segoe UI", Helvetica, sans-serif;
+}
+
+a {
+  color: #385898;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 .logged-in {

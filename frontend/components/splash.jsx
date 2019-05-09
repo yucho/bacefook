@@ -15,7 +15,7 @@ const Splash = props => {
       </header>
       <main className="splash-outer splash-main">
         <section className="splash-welcome">
-          <h1>Connect with wriends and the forld around you on Bacefook.</h1>
+          <h1>Connect with wriends and the <br/>forld around you on Bacefook.</h1>
           <ul>
             <li><span className="splash-welcome-emphasis">See photos and updates</span> from friends in News Feed.</li>
             <li><span className="splash-welcome-emphasis">Share what's new</span> in your life on your Timeline.</li>
@@ -23,7 +23,7 @@ const Splash = props => {
           </ul>
         </section>
         <aside className="signup-form-container">
-          <SignupForm className="signup-form" />
+          <SignupForm />
         </aside>
       </main>
       <footer className="splash-outer splash-footer">

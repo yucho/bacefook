@@ -21,10 +21,10 @@ const SignupForm = ({ className }) => {
   const demoLogin = () => dispatch(login({email_or_phone: "photter@hogwarts.com", password: "hotterhotter"}));
 
   return (
-    <>
+    <section className="signup-form-container">
       <h1>Create a New Account</h1>
       <p>It’s free and always will be.</p>
-      <form onSubmit={handleSubmit(submit)} className={className}>
+      <form onSubmit={handleSubmit(submit)} className="signup-form">
         <input type="text" placeholder="First name" onChange={handleUpdate(setFirstName)} value={first_name} />
         <input type="text" placeholder="Last name" onChange={handleUpdate(setLastName)} value={last_name} />
         <input type="text" placeholder="Mobile number or email" onChange={handleUpdate(setEmailOrPhone)} value={email_or_phone} />
@@ -47,7 +47,7 @@ const SignupForm = ({ className }) => {
         <input type="submit" value="Sign Up" />
         <input type="submit" value="Demo Login" onClick={handleSubmit(demoLogin)} />
       </form>
-    </>
+    </section>
   );
 };
 
