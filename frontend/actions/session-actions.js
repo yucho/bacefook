@@ -1,8 +1,9 @@
 import * as SessionAPIUtil from 'util/session-api-util';
+import { receiveAllData } from 'actions/application-actions';
 
-export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
-export const LOGOUT_CURRENT_USER = "LOGOUT_CURRENT_USER";
-export const RECEIVE_SESSION_ERROR = "RECEIVE_SESSION_ERROR";
+export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
+export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
+export const RECEIVE_SESSION_ERROR = 'RECEIVE_SESSION_ERROR';
 
 export const signup = user => dispatch => {
   SessionAPIUtil.requestSignup(user)
@@ -15,7 +16,10 @@ export const signup = user => dispatch => {
 export const login = session => dispatch => {
   SessionAPIUtil.requestLogin(session)
     .then(
-      success => dispatch(receiveCurrentUser(success)),
+      success => {
+        dispatch(receiveCurrentUser(success));
+        dispatch(receiveAllData(success));
+      },
       error => dispatch(receiveSessionError(error))
     );
 };

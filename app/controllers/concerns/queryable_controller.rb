@@ -10,6 +10,11 @@ module QueryableController
     render json: json_response
   end
 
+  def render_json_as_string(query={})
+    initialize_query_response(query)    
+    json_response.to_json.html_safe
+  end
+
   def default_json_response(json)
     @default_json_response = json
   end
@@ -49,7 +54,8 @@ module QueryableController
 
     def news_feed(user)
       {
-        users: User.all.as_json(only: [:id, :email, :phone])
+        users: User.all.as_json(only: [:id, :first_name, :last_name, :email, :phone, :posts]),
+        posts: Post.all.as_json(only: [:id, :body, :postable_id, :postable_type])
       }
     end
 end

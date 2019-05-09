@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
-import usersReducer from 'reducers/users_reducer';
 import sessionReducer from 'reducers/session-reducer';
+import usersReducer from 'reducers/users-reducer';
+import postsReducer from 'reducers/posts-reducer';
 import errorsReducer from 'reducers/errors-reducer';
 
 const entitiesReducer = combineReducers({
-  users: usersReducer,
   session: sessionReducer,
+  users: usersReducer,
+  posts: postsReducer,
   errors: errorsReducer,
   images: (state={}) => state
 });

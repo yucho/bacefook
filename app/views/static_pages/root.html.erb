@@ -3,6 +3,7 @@
 if logged_in?
 script += <<-JS
   window.bacefook.currentUser = #{current_user.uuid}
+  window.bacefook.preloadedState = #{render_json_as_string path: "/"}
 JS
 end
 if true
