@@ -15,33 +15,41 @@ const SignupForm = () => {
   const [birthDate, setBirthDate] = useState(currentDate.getDate());
   const [birthMonth, setBirthMonth] = useState(currentDate.getMonth());
   const [birthYear, setBirthYear] = useState(currentDate.getFullYear());
-  let birthday;
-  useEffect(() => { birthday = `${birthYear}/${birthMonth + 1}/${birthDate}` });
+  const [birthday, setBirthday] = useState(''); 
+  
+  const [submitted, setSubmitted] = useState(false);
+
+  useEffect(
+    () => { setBirthday(`${birthYear}/${birthMonth + 1}/${birthDate}`); },
+    [birthYear, birthMonth, birthDate]
+  );
 
   const dispatch = useDispatch();
-  const collectData = () => ({ first_name, last_name, email_or_phone, password, gender, birthday });
-  const submit = useCallback(() => {
-      dispatch(signup(collectData()))
+
+  const submit = useCallback(
+    () => {
+      setSubmitted(true);
+      dispatch(signup({ first_name, last_name, email_or_phone, password, birthday, gender }));
     },
-    [first_name, last_name, email_or_phone, password, birthYear, birthMonth, birthDate, gender]
+    [first_name, last_name, email_or_phone, password, birthday, gender]
   );
-  const sanityCheck = useCallback(() => {
-      const { first_name, last_name, email_or_phone, password, gender, birthday } = collectData();
-      return !!first_name && !!last_name && !!email_or_phone && !!password && !!gender && birthday
-    },
-    [first_name, last_name, email_or_phone, password, birthYear, birthMonth, birthDate, gender]
-  );
-  const demoLogin = () => dispatch(login({
+
+  const demoLogin = useCallback(() => dispatch(login({
     email_or_phone: "photter@hogwarts.com", password: "hotterhotter"
-  }));
+  })), []);
 
   return (
     <section className="signup-form-container">
       <h1>Create a New Account</h1>
       <p>It’s free and always will be.</p>
+
       <form onSubmit={handleSubmit(submit)} className="signup-form">
-        <input type="text" placeholder="First name" onChange={handleUpdate(setFirstName)} value={first_name} />
-        <input type="text" placeholder="Last name" onChange={handleUpdate(setLastName)} value={last_name} />
+        <input type="text" placeholder="First name" value={first_name}
+          onChange={handleUpdate(setFirstName)}
+        />
+        <input type="text" placeholder="Last name"
+          onChange={handleUpdate(setLastName)} value={last_name}
+        />
         <input type="text" placeholder="Mobile number or email" onChange={handleUpdate(setEmailOrPhone)} value={email_or_phone} />
         <input type="password" placeholder="New password" onChange={handleUpdate(setPassword)} value={password} />
 
@@ -52,7 +60,6 @@ const SignupForm = () => {
           <select onChange={handleUpdate(setBirthYear)} value={birthYear}>{_.range(1905, currentDate.getFullYear()+1).map(el => <option key={el} value={el}>{el}</option> )}</select>
         </fieldset>
 
-        {/* Gender */}
         <fieldset className="signup-form-gender">
           {['Male', 'Female', 'Other'].map(el => {
             const el_lc = el.toLowerCase();
@@ -70,7 +77,11 @@ const SignupForm = () => {
   );
 };
 
-const handleUpdate = setter => e => setter(e.target.value);
+const handleUpdate = (setter, checker) => e => {
+  if(checker) checker(e);
+  setter(e.target.value);
+};
+
 const handleSubmit = submitter => e => {
   e.preventDefault();
   submitter();
