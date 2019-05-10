@@ -19,7 +19,7 @@ const PostShow = ({ poster, post }) => {
   return (
     <section className="post-container">
       <section className="post-header">
-        <img src="" width="20px" height="20px" />
+        <div className="post-circular-image" />
         <span className="post-author">{name}</span>
         <time>{published_at}</time>
       </section>
@@ -28,8 +28,8 @@ const PostShow = ({ poster, post }) => {
       </article>
       <aside className="post-likes-and-comments">
         <ul>
-          <li>Like</li>
-          <li>Comment</li>
+          <li><i className="sprite post-like-logo"></i><span>Like</span></li>
+          <li><i className="sprite2 post-comment-logo"></i><span>Comment</span></li>
         </ul>
       </aside>
       <section className="post-comments">

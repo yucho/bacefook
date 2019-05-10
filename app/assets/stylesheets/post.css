@@ -63,9 +63,22 @@
   padding: 12px;
 }
 
-
 .post-author {
   margin-left: 12px;
+}
+
+.post-circular-image {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  background-image: url('http://widefide.com/wp-content/uploads/2012/07/Facebook-Anonymous.jpg');
+  background-size: cover;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.post-author, .post-circular-image {
+  vertical-align: middle;
 }
 
 .post-likes-and-comments {
@@ -81,4 +94,32 @@
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+.post-likes-and-comments > ul > li {
+  padding-top: 6px;
+}
+
+.post-likes-and-comments > ul > li > * {
+  vertical-align: middle;
+}
+
+i.post-like-logo {
+  width: 18px;
+  height: 18px;
+  background-position: -19px -246px;
+  -ms-high-contrast-adjust: none;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+i.post-comment-logo {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  margin: 0 6px -3px 0;
+  min-width: 18px;
+  position: relative;
+  top: -2px;
+  background-position: -83px -644px;
 }

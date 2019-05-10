@@ -1,0 +1,15 @@
+.sprite {
+  background-image: image-url("sprite.png");
+  background-size: 49px 638px;
+  background-repeat: no-repeat;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+}
+
+.sprite2 {
+  background-image: image-url("sprite2.png");
+  background-repeat: no-repeat;
+  background-size: 140px 836px;
+  background-position: -83px -644px;
+}
