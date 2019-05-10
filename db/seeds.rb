@@ -31,18 +31,3 @@ end
 
 
 DecimateAllExistence!
-
-UsersFactory([
-  ["Parry", "Hotter", "photter@hogwarts.com", "hotterhotter", "1980/7/31", "male"],
-  ["BpongeSob", "PquareSants", "spongey@krustykrabs.com", "jellyfish4ever", "1986/7/14", "male"],
-  ["Hucho", "Yo", "yucho.ho@gmail.com", "hunter12", "1989/2/12", "male"]
-])
-
-parry = User.find_by(first_name: "Parry")
-bpongesob = User.find_by(first_name: "BpongeSob")
-
-PostsFactory([
-  [parry, parry, "Until the very end.", nil],
-  [bpongesob, bpongesob, "Imagination.", nil],
-  [parry, bpongesob, "Hello, Spon... BpongeSob!", nil]
-])
