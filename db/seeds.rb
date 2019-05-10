@@ -26,7 +26,7 @@ def PostsFactory(posts_attrs)
 end
 
 def DecimateAllExistence!
-  [User].each &:delete_all
+  [User, Post].each &:delete_all
 end
 
 
@@ -40,9 +40,15 @@ UsersFactory([
 
 parry = User.find_by(first_name: "Parry")
 bpongesob = User.find_by(first_name: "BpongeSob")
+hucho = User.find_by(first_name: "Hucho")
 
 PostsFactory([
   [parry, parry, "Until the very end.", nil],
   [bpongesob, bpongesob, "Imagination.", nil],
-  [parry, bpongesob, "Hello, Spon... BpongeSob!", nil]
+  [parry, bpongesob, "Hello, Spon... BpongeSob!", nil],
+  [hucho, bpongesob, "The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.", nil],
+  [parry, parry, "If I were a tree, I would have no reason to love a human.", nil],
+  [parry, bpongesob, "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.", nil]
 ])
+
+
