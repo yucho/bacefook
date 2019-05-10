@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import { sessionId } from 'reducers/selectors';
 import Splash from 'components/splash';
 import Header from 'components/header';
+import Sidebar from 'components/sidebar';
 import PostForm from 'components/post/post-form';
 import PostIndex from 'components/post/post-index';
 
@@ -22,7 +23,7 @@ const App = ({ session, match, history }) => {
     <Header />
     <Route path="/" >
       <main className="main-content-news-feed">
-        <nav className="main-content-sidebar">Sidebar Menu</nav>
+        <Sidebar />
         <section className="main-content-main-section">
           <PostForm />
           <PostIndex />
