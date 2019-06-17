@@ -1,13 +1,8 @@
-require "bcrypt"
-
 class User < ApplicationRecord
-  include AuthableModel, PosterModel, PostableModel
-  include Utility::SanityChecker
-
   validates :password_digest, presence: true
-  validates :session_token, presence: true, uniqueness: true
-  validates :password, presence: true, allow_nil: true, length: { minimum: 6, maximum: 64 }
-  validate :valid_email_or_phone
+  validates :session_token,   presence: true, uniqueness: true
+  validates :password,        presence: true, allow_nil: true, length: { minimum: 6, maximum: 64 }
+  validate  :valid_email_or_phone
   with_options if: ->{ email_or_phone.nil? } do validate :valid_or_nil_email, :valid_or_nil_phone end
   validates :email, :phone, allow_nil: true, uniqueness: true
 

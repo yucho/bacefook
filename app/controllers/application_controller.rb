@@ -13,6 +13,15 @@ class ApplicationController < ActionController::Base
     !! current_user
   end
 
+  def login(user)
+    session[:session_token] = user.session_token
+  end
+
+  def logout!
+    current_user.reset_session_token! if current_user
+    session[:session_token] = nil
+  end
+
   private
 
     def error_handler(e)
