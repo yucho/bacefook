@@ -1,37 +1,27 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
-import { sessionId } from 'reducers/selectors';
 import Splash from 'components/splash';
+import NewsFeed from 'components/news-feed';
 import Header from 'components/header';
-import Sidebar from 'components/sidebar';
-import PostForm from 'components/post/post-form';
-import PostIndex from 'components/post/post-index';
 
 const App = ({ session, match, history }) => {
-  const currentUserId = useSelector(sessionId);
+  const currentUser = useSelector((state) => state.session.id);
 
-  if(!currentUserId) {
+  if (!currentUser) {
     document.body.classList.remove("logged-in");
     return <Splash />
-  }else {
-    document.body.classList.add("logged-in");
   }
 
+  document.body.classList.add("logged-in");
   return (
-  <>
-    <Header />
-    <Route path="/" >
-      <main className="main-content-news-feed">
-        <Sidebar />
-        <section className="main-content-main-section">
-          <PostForm />
-          <PostIndex />
-        </section>
-        <aside className="main-content-extra"></aside>
-      </main>
-    </Route>
-  </>
-)};
+    <>
+      <Header />
+      <Route path="/" >
+        <NewsFeed />
+      </Route>
+    </>
+  );
+};
 
 export default App;

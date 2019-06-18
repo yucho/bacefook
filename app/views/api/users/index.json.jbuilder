@@ -1,9 +1,8 @@
-# This will serve news feed eventually
 if logged_in?
   json.message "You are logged in!"
-  json.user do
-    json.(@user, :email, :phone)
+  json.users do
+    json.array! [current_user], :email, :phone
   end
 else
-  json.errors @user.errors.full_messages
+  json.errors current_user.errors.full_messages
 end
