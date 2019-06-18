@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  include Utility::SanityChecker
+
   validates :password_digest, presence: true
   validates :session_token,   presence: true, uniqueness: true
   validates :password,        presence: true, allow_nil: true, length: { minimum: 6, maximum: 64 }

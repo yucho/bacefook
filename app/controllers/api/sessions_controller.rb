@@ -1,11 +1,9 @@
 class Api::SessionsController < ApplicationController
-  include QueryableController, AuthableController
-
   def create
     @user = User.find_by_credential(session_params[:email_or_phone], session_params[:password])
     if @user
       login(@user)
-      append_json_response currentUser: current_user.uuid
+      render json: { currentUser: @user.id }
     else
       render json: { errors: ["Invalid credentials"] }, status: :unprocessable_entity
     end
