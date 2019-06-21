@@ -63,12 +63,16 @@
   padding: 12px;
 }
 
+.post-header {
+  position: relative;
+}
+
 .post-author {
   margin-left: 12px;
   margin-right: 27px;
 }
 
-i.post-dropdown-menu {
+i.post-dropdown-menu-icon {
   background-repeat: no-repeat;
   background-position: -106px -582px;
   width: 20px;
@@ -77,6 +81,26 @@ i.post-dropdown-menu {
   margin-top: 10px;
   margin-right: 7px;
   float: right;
+}
+
+.post-dropdown-menu-list {
+  display: none;
+  position: absolute;
+  list-style-type: none;
+  margin: 0 2px;
+  right: 0;
+  top: 30px;
+  padding: 4px 12px;
+  color: #606770;
+  box-shadow: 0 0 4px #606770;
+}
+
+.post-dropdown-menu-list-visible {
+  display: block;
+}
+
+.post-dropdown-menu-list > li:nth-last-child(n+2) {
+  padding-bottom: 2px;
 }
 
 .post-circular-image {
