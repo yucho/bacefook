@@ -8,8 +8,12 @@ class User < ApplicationRecord
   with_options if: ->{ email_or_phone.nil? } do validate :valid_or_nil_email, :valid_or_nil_phone end
   validates :email, :phone, allow_nil: true, uniqueness: true
 
+  has_many :posts, as: :poster
+  has_many :timeline_posts, as: :postable, class_name: :Post
+
   has_many :friend_requests, dependent: :destroy
   has_many :pending_friends, through: :friend_requests, source: :friend
+
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
 
