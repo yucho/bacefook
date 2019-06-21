@@ -10,7 +10,7 @@ export const signup = user => dispatch => {
     .then(
       success => {
         dispatch(receiveCurrentUser(success));
-        dispatch(receiveAllData(success));
+        // dispatch(receiveAllData(success));
       },
       error => dispatch(receiveSessionError(error))
     );
@@ -21,7 +21,7 @@ export const login = session => dispatch => {
     .then(
       success => {
         dispatch(receiveCurrentUser(success));
-        dispatch(receiveAllData(success));
+        // dispatch(receiveAllData(success));
       },
       error => dispatch(receiveSessionError(error))
     );

@@ -1,7 +1,5 @@
 class StaticPagesController < ApplicationController
-  include QueryableController
-
-  helper_method :image_paths, :render_json_as_string
+  helper_method :image_paths
 
   def image_paths
     {

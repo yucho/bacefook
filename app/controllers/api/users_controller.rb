@@ -1,11 +1,9 @@
 class Api::UsersController < ApplicationController
-  include QueryableController, AuthableController
-
   def create
     @user = User.new(new_user_params)
     if @user.save!
       login(@user)
-      append_json_response currentUser: current_user.uuid
+      render :index
     end
   end
 

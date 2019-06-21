@@ -35,12 +35,14 @@ DecimateAllExistence!
 UsersFactory([
   ["Parry", "Hotter", "photter@hogwarts.com", "hotterhotter", "1980/7/31", "male"],
   ["BpongeSob", "PquareSants", "spongey@krustykrabs.com", "jellyfish4ever", "1986/7/14", "male"],
-  ["Hucho", "Yo", "yucho.ho@gmail.com", "hunter12", "1989/2/12", "male"]
+  ["Hucho", "Yo", "yucho.ho@gmail.com", "hunter12", "1989/2/12", "male"],
+  ["Lonely", "Boy", "no_friends@sadboy.me", "hunter12", "1999/9/9", "male"]
 ])
 
 parry = User.find_by(first_name: "Parry")
 bpongesob = User.find_by(first_name: "BpongeSob")
 hucho = User.find_by(first_name: "Hucho")
+loner = User.find_by(first_name: "Lonely")
 
 PostsFactory([
   [parry, parry, "Until the very end.", nil],
@@ -49,6 +51,8 @@ PostsFactory([
   [hucho, bpongesob, "The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.", nil],
   [parry, parry, "If I were a tree, I would have no reason to love a human.", nil],
   [parry, bpongesob, "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.", nil]
+  [loner, loner, "My post cannot be seen by others", nil]
 ])
 
-
+parry.friendships.create(friend: bpongesob)
+hucho.friendships.create(friend: bpongesob)

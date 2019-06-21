@@ -1,15 +1,21 @@
-require "bcrypt"
-
 class User < ApplicationRecord
-  include AuthableModel, PosterModel, PostableModel
   include Utility::SanityChecker
 
   validates :password_digest, presence: true
-  validates :session_token, presence: true, uniqueness: true
-  validates :password, presence: true, allow_nil: true, length: { minimum: 6, maximum: 64 }
-  validate :valid_email_or_phone
+  validates :session_token,   presence: true, uniqueness: true
+  validates :password,        presence: true, allow_nil: true, length: { minimum: 6, maximum: 64 }
+  validate  :valid_email_or_phone
   with_options if: ->{ email_or_phone.nil? } do validate :valid_or_nil_email, :valid_or_nil_phone end
   validates :email, :phone, allow_nil: true, uniqueness: true
+
+  has_many :posts, as: :poster
+  has_many :timeline_posts, as: :postable, class_name: :Post
+
+  has_many :friend_requests, dependent: :destroy
+  has_many :pending_friends, through: :friend_requests, source: :friend
+
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
 
   attr_reader :password, :email_or_phone
 
@@ -35,6 +41,9 @@ class User < ApplicationRecord
     end
   end
 
+  def remove_friend(friend)
+    friends.destroy(friend)
+  end
 
   private
 
