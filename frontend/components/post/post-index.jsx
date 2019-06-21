@@ -5,7 +5,7 @@ import Post from 'components/post/post';
 const PostIndex = () => {
   const posts = useSelector(state => state.posts);
   const newest = Object.keys(posts).sort((a, b) => (
-    new Date(posts[a].date) - new Date(posts[b].date)
+    new Date(posts[b].published_at) - new Date(posts[a].published_at)
   ));
 
   return (

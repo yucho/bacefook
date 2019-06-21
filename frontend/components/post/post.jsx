@@ -21,7 +21,7 @@ const PostShow = ({ poster, post }) => {
       <section className="post-header">
         <div className="post-circular-image" />
         <span className="post-author">{name}</span>
-        <time>{published_at}</time>
+        {/* <time>{published_at}</time> */}
       </section>
       <article className="post-body">
         <p>{body}</p>

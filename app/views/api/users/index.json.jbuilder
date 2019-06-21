@@ -10,9 +10,19 @@ else
       poster_id IN (?) OR postable_id IN (?)
     )
   SQL
+  .uniq
+
+  users = User.all # For now, just send all users
 
   json.users do
-    json.array! users, :email, :phone, :posts
+    json.array! users do |user|
+      json.id user.id
+      json.first_name user.first_name
+      json.last_name user.last_name
+      json.email user.email
+      json.phone user.phone
+      json.posts { json.array! user.posts, :id }
+    end
   end
 
   json.posts do

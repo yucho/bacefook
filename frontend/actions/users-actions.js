@@ -4,7 +4,7 @@ export const RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 
 export const fetchNewsFeed = () => (dispatch) => {
   $.ajax({url: 'api/users'}).then(
-    (data) => dispatch(receiveAllData(data)),
+    (data) => {console.log(data);dispatch(receiveAllData(data))},
     (error) => console.log(error)
   );
 };

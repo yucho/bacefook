@@ -9,10 +9,7 @@ const NewsFeed = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
   useEffect(() => {
-    if (_.isEmpty(users)) {
-      console.log('Oh dear me')
-      dispatch(fetchNewsFeed());
-    }
+    dispatch(fetchNewsFeed());
   }, []);
 
   return (

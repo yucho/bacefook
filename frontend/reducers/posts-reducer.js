@@ -1,11 +1,14 @@
-import { RECEIVE_POSTS } from 'actions/posts-actions';
+import { RECEIVE_POSTS, RECEIVE_POST } from 'actions/posts-actions';
 
 const postsReducer = (prevState = {}, action) => {
   Object.freeze(prevState);
+  const newState = {}
   switch(action.type) {
     case RECEIVE_POSTS:
-      const newState = {}
       action.posts.forEach(el => newState[el.id] = el);
+      return Object.assign({}, prevState, newState);
+    case RECEIVE_POST:
+      newState[action.post.id] = action.post;
       return Object.assign({}, prevState, newState);
     default:
       return prevState;
