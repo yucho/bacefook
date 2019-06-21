@@ -74,7 +74,7 @@
 
 i.post-dropdown-menu-icon {
   background-repeat: no-repeat;
-  background-position: -106px -582px;
+  background-position: -106px -603px;
   width: 20px;
   height: 20px;
   display: block;
@@ -83,15 +83,23 @@ i.post-dropdown-menu-icon {
   float: right;
 }
 
+i.post-dropdown-menu-icon:hover {
+  background-position: -106px -582px;
+  cursor: pointer;
+}
+
 .post-dropdown-menu-list {
   display: none;
   position: absolute;
   list-style-type: none;
-  margin: 0 2px;
+  margin: 0;
+  padding: 0;
   right: 0;
   top: 30px;
-  padding: 4px 12px;
+  font-size: 13px;
   color: #606770;
+  background: #fff;
+  border-radius: 2px;
   box-shadow: 0 0 4px #606770;
 }
 
@@ -99,8 +107,21 @@ i.post-dropdown-menu-icon {
   display: block;
 }
 
-.post-dropdown-menu-list > li:nth-last-child(n+2) {
-  padding-bottom: 2px;
+.post-dropdown-menu-list > li {
+  padding: 4px 24px;
+}
+
+.post-dropdown-menu-list > li:hover {
+  color: #fff;
+  background-color: #385898;
+}
+
+.post-dropdown-menu-list > li:first-child {
+  margin-top: 4px;
+}
+
+.post-dropdown-menu-list > li:nth-last-child(1) {
+  margin-bottom: 4px;
 }
 
 .post-circular-image {

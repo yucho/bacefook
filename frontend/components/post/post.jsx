@@ -23,8 +23,8 @@ const PostShow = ({ poster, post }) => {
   const menuElement = <>
     <i ref={icon} className="sprite2 post-dropdown-menu-icon" onClick={() => setMenuVisible(true)}></i>
     <ul ref={menu} className={menuClass(menuVisible)}>
-      <li>Edit</li>
-      <li>Delete</li>
+      <li>Edit...</li>
+      <li>Delete...</li>
     </ul>
   </>
 

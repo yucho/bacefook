@@ -9,7 +9,7 @@
 # Quick and dirty methods, refactor it later
 def UserFactory(attrs)
   attr_names = [:first_name, :last_name, :email, :password, :birthday, :gender]
-  User.create!(attr_names.each.with_index.with_object({}) { |(name, i), memo| memo[name] = attrs[i] })
+  User.create(attr_names.each.with_index.with_object({}) { |(name, i), memo| memo[name] = attrs[i] })
 end
 
 def UsersFactory(users_attrs)
@@ -18,7 +18,7 @@ end
 
 def PostFactory(attrs)
   attr_names = [:poster, :postable, :body, :published_at]
-  Post.create!(attr_names.each.with_index.with_object({}) { |(name, i), memo| memo[name] = attrs[i] })
+  Post.create(attr_names.each.with_index.with_object({}) { |(name, i), memo| memo[name] = attrs[i] })
 end
 
 def PostsFactory(posts_attrs)
@@ -50,7 +50,7 @@ PostsFactory([
   [parry, bpongesob, "Hello, Spon... BpongeSob!", nil],
   [hucho, bpongesob, "The world as we have created it is a process of our thinking. It cannot be changed without changing our thinking.", nil],
   [parry, parry, "If I were a tree, I would have no reason to love a human.", nil],
-  [parry, bpongesob, "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.", nil]
+  [parry, bpongesob, "It takes a great deal of bravery to stand up to our enemies, but just as much to stand up to our friends.", nil],
   [loner, loner, "My post cannot be seen by others", nil]
 ])
 
