@@ -22,6 +22,7 @@ const PostShow = ({ poster, post }) => {
         <div className="post-circular-image" />
         <span className="post-author">{name}</span>
         {/* <time>{published_at}</time> */}
+        <i className="sprite2 post-dropdown-menu"></i>
       </section>
       <article className="post-body">
         <p>{body}</p>
