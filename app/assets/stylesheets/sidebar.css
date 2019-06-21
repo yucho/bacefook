@@ -10,7 +10,119 @@
 }
 
 .main-content-sidebar > ul > li {
-  background: lightgray;
+  font-size: 13px;
   min-height: 20px;
-  margin: 10px 0;
+  padding: 4px 0;
+}
+
+.main-content-sidebar > ul > li > i {
+  display: inline-block;
+  width: 21px;
+  height: 21px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+
+.icon-newsfeed {
+  background-position: 0px -496px;
+}
+
+.icon-messenger {
+  background-position: -104px -369px;
+}
+
+.icon-watch {
+  background-position: 0px -559px;
+}
+
+.icon-marketplace{
+  background-position: -105px -475px;
+}
+
+.icon-groups {
+  background-position: -62px -369px;
+}
+
+.icon-pages {
+  background-position: -22px -391px;
+}
+
+.icon-oculus {
+  background-position: 0px -392px;
+}
+
+.icon-events {
+  background-position: -105px -413px;
+}
+
+.icon-games {
+  background-position: -83px -369px;
+}
+
+.icon-crisis {
+  background-position: -42px -434px;
+}
+
+.icon-gaming {
+  background-position: -41px -369px;
+}
+
+.icon-movies {
+  background-position: -105px -539px;
+}
+
+.icon-buysell {
+  background-position: -42px -539px;
+}
+
+.icon-jobs {
+  background-position: 0px -414px;
+}
+
+.icon-discover {
+  background-position: -105px -434px;
+}
+
+.icon-townhall {
+  background-position: 0px -168px;
+}
+
+.icon-kids {
+  background-position: 0px 0px;
+}
+
+.icon-apps {
+  background-position: 0px -21px;
+}
+
+.icon-recent {
+  background-position: -63px -518px;
+}
+
+.icon-weather {
+  background-position: -21px -539px;
+}
+
+.icon-offers {
+  background-position: -42px -497px;
+}
+
+.icon-recommendations {
+  background-position: -84px -434px;
+}
+
+.icon-friends {
+  background-position: -63px -455px;
+}
+
+.icon-saved {
+  background-position: -105px -390px;
+}
+
+.icon-memories {
+  background-position: -63px -497px;
+}
+
+.icon-fundraisers {
+  background-position: -105px -454px;
 }

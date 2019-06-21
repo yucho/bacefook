@@ -31,7 +31,7 @@ const PostShow = ({ poster, post }) => {
   useEffect(() => {
     const cb = hideMenu(setMenuVisible, icon, menu);
     document.body.addEventListener('click', cb);
-    return () => document.body.removeEventListener(cb);
+    return () => document.body.removeEventListener('click', cb);
   }, []);
 
   return (
