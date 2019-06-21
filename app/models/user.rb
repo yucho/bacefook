@@ -8,6 +8,11 @@ class User < ApplicationRecord
   with_options if: ->{ email_or_phone.nil? } do validate :valid_or_nil_email, :valid_or_nil_phone end
   validates :email, :phone, allow_nil: true, uniqueness: true
 
+  has_many :friend_requests, dependent: :destroy
+  has_many :pending_friends, through: :friend_requests, source: :friend
+  has_many :friendships, dependent: :destroy
+  has_many :friends, through: :friendships
+
   attr_reader :password, :email_or_phone
 
   after_initialize :ensure_session_token
@@ -32,6 +37,9 @@ class User < ApplicationRecord
     end
   end
 
+  def remove_friend(friend)
+    friends.destroy(friend)
+  end
 
   private
 

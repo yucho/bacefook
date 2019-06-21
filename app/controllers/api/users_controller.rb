@@ -3,7 +3,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(new_user_params)
     if @user.save!
       login(@user)
-      append_json_response currentUser: current_user.id
+      render :index
     end
   end
 
