@@ -39,16 +39,20 @@ const darkenBackground = (open) => () => {
   return () => $darkDiv.remove();
 };
 
-const className = 'stop-scrolling';
+const rootClass = 'show-scrollbar';
+const bodyClass = 'stop-scrolling';
 const cb = (e) => e.preventDefault();
 const scrollJack = (open) => () => {
   const $body = $('body');
+  const $root = $('#root');
   const close = () => {
-    $body.removeClass(className);
+    $root.removeClass(rootClass);
+    $body.removeClass(bodyClass);
     $body.off('touchmove', cb);
   };
   if (open) {
-    $body.addClass(className);
+    $root.addClass(rootClass);
+    $body.addClass(bodyClass);
     $body.on('touchmove', cb);
   } else {
     close();
