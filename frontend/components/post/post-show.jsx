@@ -35,7 +35,7 @@ const PostShow = ({ poster, post }) => {
       <i ref={icon} className="sprite2 post-dropdown-menu-icon" onClick={set(toggle, true)}></i>
       <ul ref={menu} className={menuClass(visible)}>
         <li>Edit...</li>
-        <li onClick={set(setOpenDelete, true)}>Delete...</li>
+        <li onClick={() => { toggle(false); setOpenDelete(true) }}>Delete...</li>
       </ul>
     </section>
     <article className="post-body">

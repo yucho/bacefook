@@ -1,8 +1,0 @@
-.modal-confirm-container.modal-confirm-delete-post {
-  position: fixed;
-  top: 40%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  width: 445px;
-  background: #fff;
-}

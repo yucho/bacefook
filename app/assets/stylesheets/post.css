@@ -109,6 +109,7 @@ i.post-dropdown-menu-icon:hover {
 
 .post-dropdown-menu-list > li {
   padding: 4px 24px;
+  cursor: pointer;
 }
 
 .post-dropdown-menu-list > li:hover {
