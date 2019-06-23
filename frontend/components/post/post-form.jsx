@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { sendPost } from 'actions/posts-actions';
+import { createPost } from 'actions/posts-actions';
 
 const PostForm = ({postable_id = null, postable_type = 'User'}) => {
   const [body, setBody] = useState('');
@@ -24,7 +24,7 @@ const PostForm = ({postable_id = null, postable_type = 'User'}) => {
 const handleUpdate = (setter) => (e) => setter(e.target.value);
 const submitPost = (dispatch, body, postable_id, postable_type, setBody) => (e) => {
   e.preventDefault();
-  dispatch(sendPost({post: { body, postable_id, postable_type }}));
+  dispatch(createPost({post: { body, postable_id, postable_type }}));
   setBody('');
 };
 

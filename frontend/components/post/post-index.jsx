@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import Post from 'components/post/post';
+import Post from './post-show';
 
 const PostIndex = () => {
   const posts = useSelector(state => state.posts);

@@ -14,14 +14,12 @@ const App = ({ session, match, history }) => {
   }
 
   document.body.classList.add("logged-in");
-  return (
-    <>
-      <Header />
-      <Route path="/" >
-        <NewsFeed />
-      </Route>
-    </>
-  );
+  return <>
+    <Header />
+    <Route path="/" >
+      <NewsFeed />
+    </Route>
+  </>
 };
 
 export default App;
