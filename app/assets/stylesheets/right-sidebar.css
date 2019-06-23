@@ -1,0 +1,35 @@
+.right-sidebar-container {
+  width: 308px;
+}
+
+.right-sidebar-friends-suggestion-container,
+.right-sidebar-language-selection-container {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #90949c;
+  background-color: #fff;
+  border: 1px solid #dddfe2;
+  border-radius: 3px;
+}
+
+.right-sidebar-language-selection-container > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right-sidebar-language-selection-container > ul > li {
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+}
+
+.right-sidebar-copyright-container {
+  font-size: 12px;
+  color: #616770;
+  line-height: 1.4;
+}

@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Route } from 'react-router-dom';
 import Splash from 'components/splash';
-import NewsFeed from 'components/news-feed';
+import NewsFeed from 'components/news-feed/news-feed';
 import Header from 'components/header';
 
 const App = ({ session, match, history }) => {

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sidebar = () => (
+const LeftSidebar = () => (
   <nav className="main-content-sidebar">
     <ul>
       <li><i className="sprite2 icon-newsfeed" />News Feed</li>
@@ -33,4 +33,4 @@ const Sidebar = () => (
   </nav>
 );
 
-export default Sidebar;
+export default LeftSidebar;

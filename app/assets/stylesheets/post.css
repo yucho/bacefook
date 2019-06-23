@@ -1,6 +1,6 @@
 .post-form-container {
   border: 1px solid  #dadde1;
-  border-radius: 6px;
+  border-radius: 3px;
   margin-bottom: 12px;
 }
 
@@ -8,8 +8,8 @@
   font-size: 12px;
   margin: 0;
   padding: 12px;
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
   border-bottom: 1px solid  #dadde1;
   background: #f5f6f7;
 }
@@ -18,8 +18,8 @@
   background: #fff;
   margin: 0;
   padding-bottom: 12px;
-  border-bottom-left-radius: 6px;
-  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
@@ -58,7 +58,7 @@
 .post-container {
   background: #fff;
   border: 1px solid  #dadde1;
-  border-radius: 6px;
+  border-radius: 3px;
   margin-bottom: 12px;
   padding: 12px;
 }

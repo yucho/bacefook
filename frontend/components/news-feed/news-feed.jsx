@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchNewsFeed } from 'actions/users-actions';
-import Sidebar from 'components/sidebar';
+import LeftSidebar from 'components/news-feed/left-sidebar';
+import RightSidebar from 'components/news-feed/right-sidebar'
 import PostForm from 'components/post/post-form';
 import PostIndex from 'components/post/post-index';
 
@@ -14,12 +15,12 @@ const NewsFeed = () => {
 
   return (
     <main className="main-content-news-feed">
-      <Sidebar />
+      <LeftSidebar />
       <section className="main-content-main-section">
         <PostForm />
         <PostIndex />
       </section>
-      <aside className="main-content-extra"></aside>
+      <RightSidebar />
     </main>
   );
 };
