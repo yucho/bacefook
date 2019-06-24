@@ -35,10 +35,14 @@
   border-radius: 50%;
 }
 
-.post-form > input[type="text"] {
+.post-form > textarea {
   width: 430px;
   padding: 12px;
-  border: 0px;
+  border-style: none;
+  overflow: auto;
+  outline: none;
+  resize: none;
+  overflow: auto;
 }
 
 .post-form-share-button {
