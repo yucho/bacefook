@@ -153,6 +153,10 @@ i.post-dropdown-menu-icon:hover {
   vertical-align: middle;
 }
 
+.post-body {
+  white-space: pre-line;
+}
+
 .post-likes-and-comments {
   color: #606770;
   margin: 4px 0;
