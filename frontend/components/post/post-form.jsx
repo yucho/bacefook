@@ -16,7 +16,7 @@ const PostForm = ({postable_id = null, postable_type = 'User'}) => {
     <section className={`post-form-container ${focus ? 'post-form-container-focus' : ''}`}
       ref={container} onClick={() => setFocus(true)}>
       <h3>Create Post</h3>
-      <form className="post-form" onSubmit={submitPost(dispatch, body, postable_id, postable_type, setBody)}>
+      <form className="post-form" onSubmit={submitPost(dispatch, body, postable_id, postable_type, setBody, setFocus)}>
         <div className="post-form-circular-image"/>
         <Textarea onChange={handleUpdate(setBody)} value={body} placeholder="What's on your mind?" />
         <Prompt when={!!body} message="You haven't finished your post yet. Do you want to leave without finishing?" />
@@ -28,10 +28,11 @@ const PostForm = ({postable_id = null, postable_type = 'User'}) => {
 };
 
 const handleUpdate = (setter) => (e) => setter(e.target.value);
-const submitPost = (dispatch, body, postable_id, postable_type, setBody) => (e) => {
+const submitPost = (dispatch, body, postable_id, postable_type, setBody, setFocus) => (e) => {
   e.preventDefault();
   dispatch(createPost({post: { body, postable_id, postable_type }}));
   setBody('');
+  setFocus(false);
 };
 
 export default PostForm;
