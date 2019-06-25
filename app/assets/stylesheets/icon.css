@@ -1,0 +1,9 @@
+.user-icon {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  background-image: url('http://widefide.com/wp-content/uploads/2012/07/Facebook-Anonymous.jpg');
+  background-size: cover;
+  display: inline-block;
+  border-radius: 50%;
+}

@@ -53,3 +53,11 @@ a:hover {
 .main-content-extra {
   width: 308px;
 }
+
+textarea::placeholder {
+  color: #727272;
+}
+
+textarea:focus::placeholder {
+  color: #b9b9b9;
+}

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import ModalConfirm from 'components/ui/modal-confirm';
+import CommentIndex from 'components/comment/comment-index';
 import { destroyPost } from 'actions/posts-actions';
 
 const PostShow = ({ poster, post }) => {
@@ -52,6 +53,7 @@ const PostShow = ({ poster, post }) => {
     <ModalConfirm className="modal-confirm-delete-post"
       opts={deleteOpts(post)} open={openDelete} close={set(setOpenDelete, false)}
     />
+    <CommentIndex post={post} />
   </section>
 };
 

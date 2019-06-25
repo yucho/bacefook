@@ -1,0 +1,36 @@
+.comment-index-container {
+  margin: 0;
+  padding: 0;
+}
+
+.comment-show-container {
+  margin: 0;
+  padding: 12px;
+}
+
+.comment-form-container {
+  margin: 0;
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-form-textarea {
+  display: block;
+  width: 438px;
+  resize: none;
+  margin: 0;
+  padding: 8px 10px;
+  color: #1c1e21;
+  font-size: 13px;
+  line-height: 16px;
+  background: #f2f3f5;
+  border: 1px solid #ccd0d5;
+  border-radius: 18px;
+  outline: none;
+}
+
+div.comment-form-user-icon {
+  width: 30px;
+  height: 30px;
+}
