@@ -7,8 +7,8 @@ class Comment < ApplicationRecord
   ALLOWED_COMMENTER_TYPES = %w(User)
   ALLOWED_COMMENTABLE_TYPES = %w(Post Comment)
   validates :commenter_id, :commentable_id, :body, presence: true
-  validates :commenter_id, presence: true, inclusion: { in: ALLOWED_COMMENTER_TYPES }
-  validates :commentable_id, presence: true, inclusion: { in: ALLOWED_COMMENTABLE_TYPES }
+  validates :commenter_type, presence: true, inclusion: { in: ALLOWED_COMMENTER_TYPES }
+  validates :commentable_type, presence: true, inclusion: { in: ALLOWED_COMMENTABLE_TYPES }
   validate :valid_commenter
   validate :valid_commentable
 
