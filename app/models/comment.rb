@@ -1,8 +1,10 @@
 class Comment < ApplicationRecord
   belongs_to :commenter, polymorphic: true
   belongs_to :commentable, polymorphic: true
+  has_many :comments, as: :commentable
   alias_attribute :author, :commenter
   alias_attribute :target, :commentable
+  alias_attribute :replies, :comments
   
   ALLOWED_COMMENTER_TYPES = %w(User)
   ALLOWED_COMMENTABLE_TYPES = %w(Post Comment)

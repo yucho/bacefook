@@ -5,7 +5,25 @@
 
 .comment-show-container {
   margin: 0;
-  padding: 12px;
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+}
+
+div.comment-show-user-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.comment-show-comment {
+  display: block;
+  width: 438px;
+  padding: 8px 10px;
+  font-size: 13px;
+  background: #f2f3f5;
+  border-radius: 18px;
+  white-space: pre-line;
 }
 
 .comment-form-container {

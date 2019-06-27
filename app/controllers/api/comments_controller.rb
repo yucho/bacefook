@@ -1,5 +1,5 @@
 class Api::CommentsController < ApplicationController
-  before_action :set_comment, only: [:update, :destroy]
+  before_action :set_comment, only: [:show, :update, :destroy]
   def create
     @comment = Comment.new(comment_params)
     if(@comment.save)
@@ -11,7 +11,6 @@ class Api::CommentsController < ApplicationController
 
   def index
     @comment = Comment.where(author: current_user)
-    render json: @comment
   end
 
   def update

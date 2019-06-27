@@ -14,6 +14,8 @@ else
 
   users = User.all # For now, just send all users
 
+  comments = Comment.all # For now, just send all comments
+
   json.users do
     json.array! users do |user|
       json.id user.id
@@ -25,7 +27,7 @@ else
     end
   end
 
-  json.posts do
-    json.array! posts
-  end
+  json.partial! "api/posts/index", posts: posts
+
+  json.partial! "api/comments/index", comments: comments
 end

@@ -1,5 +1,5 @@
 class Api::PostsController < ApplicationController
-  before_action :set_post, only: [:update, :destroy]
+  before_action :set_post, only: [:show, :update, :destroy]
 
   def create
     # Temporarily write on your own timeline
@@ -21,9 +21,7 @@ class Api::PostsController < ApplicationController
 
   def index
     @posts = current_user.posts
-    if(@posts)
-      render json: @posts, status: :ok
-    else
+    unless(@posts)
       render json: @posts.errors, status: :bad_request
     end
   end
@@ -51,6 +49,6 @@ class Api::PostsController < ApplicationController
   end
 
   def set_post
-    @post = current_user.posts.find(params[:id])
+    @post = Post.find(params[:id])
   end
 end
