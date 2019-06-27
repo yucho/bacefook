@@ -6,7 +6,6 @@ import CommentForm from 'components/comment/comment-form';
 const CommentIndex = ({ post }) => {
   const comments = useSelector((state) => state.comments);
   const replies = [];
-  console.log('POST is', post);
   for (const id of post.comments) {
     const comment = comments[id];
     if(comment) replies.push(comment);
