@@ -13,7 +13,7 @@ class Api::PostsController < ApplicationController
     @post.postable = klass.find(post_params[:postable_id])
     if(@post.save)
       @post = Post.find(@post.id) # Because default is set by database
-      render json: @post, status: :created
+      render :show, status: :created
     else
       render json: @post.errors, status: :unprocessable_entity
     end
