@@ -28,33 +28,33 @@ const PostShow = ({ poster, post }) => {
 
   useEffect(dropdown(toggle, [icon, menu]), []);
 
-  return <section className="post-container">
-    <section className="post-header">
-      <div className="post-circular-image" />
-      <span className="post-author">{name}</span>
-      {/* <time>{published_at}</time> */}
-      <i ref={icon} className="sprite2 post-dropdown-menu-icon" onClick={set(toggle, true)}></i>
-      <ul ref={menu} className={menuClass(visible)}>
-        <li>Edit...</li>
-        <li onClick={() => { toggle(false); setOpenDelete(true) }}>Delete...</li>
-      </ul>
-    </section>
-    <article className="post-body">
-      <p>{body}</p>
-    </article>
-    <aside className="post-likes-and-comments">
-      <ul>
-        <li><i className="sprite post-like-logo"></i><span>Like</span></li>
-        <li><i className="sprite2 post-comment-logo"></i><span>Comment</span></li>
-      </ul>
-    </aside>
-    <section className="post-comments">
+  return <>
+    <section className="post-container">
+      <section className="post-header">
+        <div className="post-circular-image" />
+        <span className="post-author">{name}</span>
+        {/* <time>{published_at}</time> */}
+        <i ref={icon} className="sprite2 post-dropdown-menu-icon" onClick={set(toggle, true)}></i>
+        <ul ref={menu} className={menuClass(visible)}>
+          {/* <li>Edit...</li> */}
+          <li onClick={() => { toggle(false); setOpenDelete(true) }}>Delete...</li>
+        </ul>
+      </section>
+      <article className="post-body">
+        <p>{body}</p>
+      </article>
+      <aside className="post-likes-and-comments">
+        <ul>
+          <li><i className="sprite post-like-logo"></i><span>Like</span></li>
+          <li><i className="sprite2 post-comment-logo"></i><span>Comment</span></li>
+        </ul>
+      </aside>
     </section>
     <ModalConfirm className="modal-confirm-delete-post"
       opts={deleteOpts(post)} open={openDelete} close={set(setOpenDelete, false)}
     />
     <CommentIndex post={post} />
-  </section>
+  </>
 };
 
 const dropdown = (toggle, elements) => () => {
