@@ -4,11 +4,23 @@
   color: #fff;
   background-color: #4267b2;
   border-bottom: 1px solid #29487d;
+  display: flex;
+}
+
+.main-header-icon-wrapper {
+  display: block;
+  width: 24px;
+  height: 24px;
+}
+
+.main-header-icon {
+  width: 24px;
+  height: 24px;
 }
 
 .main-header-items {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
   width: 1012px;
   height: 100%;

@@ -3,7 +3,8 @@ class StaticPagesController < ApplicationController
 
   def image_paths
     {
-      "splash-logo": helpers.image_path("bacefook.png")
+      "splash-logo": helpers.image_path("bacefook.png"),
+      "header-logo": helpers.image_path("bacefook-icon.png")
     }.to_json.html_safe
   end
 

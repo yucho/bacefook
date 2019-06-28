@@ -31,7 +31,7 @@ const Splash = props => {
             <li>
               <Icon name="search" appendClasses="md_48" />
               <span><span className="splash-welcome-emphasis">Find more</span> of
-              what you're looking for with Facebook Search.</span>
+              what you're looking for with Bacefook Search.</span>
             </li>
           </ul>
         </section>
