@@ -68,8 +68,13 @@ fieldset.signup-form-gender {
   margin-left: 5px;
 }
 
+.signup-form-gender input {
+  cursor: pointer;
+}
+
 .signup-form-gender label {
   padding: 0 10px;
+  cursor: pointer;
 }
 
 .signup-form-terms {
@@ -87,6 +92,12 @@ fieldset.signup-form-gender {
   background: linear-gradient(#67ae55, #578843);
   box-shadow: inset 0 1px 1px #a4e388;
   border-color: #3b6e22 #3b6e22 #2c5115;
+  cursor: pointer;
+}
+
+.signup-form > input[type="submit"]:hover {
+  background: linear-gradient(#79c466, #67a050);
+  box-shadow: inset 0 1px 1px #aeec93;
 }
 
 .signup-form > input[type="submit"]:last-of-type {
@@ -94,6 +105,12 @@ fieldset.signup-form-gender {
   background: linear-gradient(#ae9655, #887243);
   box-shadow: inset 0 1px 1px #e3d588;
   border-color: #6e6022 #6e5622 #513e15;
+  cursor: pointer;
+}
+
+.signup-form > input[type="submit"]:last-of-type:hover {
+  background: linear-gradient(#b9a160, #9c844e);
+  box-shadow: inset 0 1px 1px #ebdd8f;
 }
 
 input.signup-form-error-text {
