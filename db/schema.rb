@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_25_070947) do
+ActiveRecord::Schema.define(version: 2019_06_30_050643) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -69,11 +69,22 @@ ActiveRecord::Schema.define(version: 2019_06_25_070947) do
   end
 
   create_table "photos", force: :cascade do |t|
-    t.string "user_type"
-    t.bigint "user_id"
+    t.string "account_type"
+    t.bigint "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_type", "user_id"], name: "index_photos_on_user_type_and_user_id"
+    t.index ["account_type", "account_id"], name: "index_photos_on_account_type_and_account_id"
+  end
+
+  create_table "post_fields", force: :cascade do |t|
+    t.bigint "post_id"
+    t.integer "field_id"
+    t.string "field_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["field_id"], name: "index_post_fields_on_field_id"
+    t.index ["field_type"], name: "index_post_fields_on_field_type"
+    t.index ["post_id"], name: "index_post_fields_on_post_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -112,4 +123,5 @@ ActiveRecord::Schema.define(version: 2019_06_25_070947) do
   add_foreign_key "friend_requests", "users", column: "friend_id"
   add_foreign_key "friendships", "users"
   add_foreign_key "friendships", "users", column: "friend_id"
+  add_foreign_key "post_fields", "posts"
 end

@@ -17,9 +17,11 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
 
-  attr_reader :password, :email_or_phone
+  has_many :photos, as: :account
 
   after_initialize :ensure_session_token
+  
+  attr_reader :password, :email_or_phone
 
   def self.find_by_credential(email_or_phone, password)
     user = User.find_by(email: email_or_phone) || User.find_by(phone: email_or_phone)
