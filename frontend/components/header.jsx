@@ -10,7 +10,7 @@ const Header = props => {
   return (
     <header className="main-header">
       <nav className="main-header-items">
-        <Link to="/" class="main-header-icon-wrapper">
+        <Link to="/" className="main-header-icon-wrapper">
           <img src={logo} className="main-header-icon" />
         </Link>
         <button onClick={handleSubmit(submit)} className="logout-button">Log Out</button>

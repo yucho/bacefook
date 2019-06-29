@@ -4,6 +4,7 @@ import { Prompt } from 'react-router-dom'
 import Textarea from 'react-textarea-autosize';
 import { createPost } from 'actions/posts-actions';
 import ModalDarken from 'components/ui/modal-darken';
+import PostFormPhotos from 'components/post/post-form-photos';
 
 const PostForm = ({postable_id = null, postable_type = 'User'}) => {
   const [body, setBody] = useState('');
@@ -20,7 +21,10 @@ const PostForm = ({postable_id = null, postable_type = 'User'}) => {
         <div className="post-form-circular-image"/>
         <Textarea onChange={handleUpdate(setBody)} value={body} placeholder="What's on your mind?" />
         <Prompt when={!!body} message="You haven't finished your post yet. Do you want to leave without finishing?" />
-        <input type="submit" value="Share" className="post-form-share-button" />
+        <PostFormPhotos />
+        <fieldset class="post-form-share-button-wrapper">
+          <input type="submit" value="Share" className="post-form-share-button" />
+        </fieldset>
       </form>
       <ModalDarken activate={focus} deactivate={() => setFocus(false)} element={container} scrollJack={false}/>
     </section>

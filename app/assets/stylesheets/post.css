@@ -50,6 +50,42 @@
   overflow: auto;
 }
 
+.post-form-photos {
+  display: none;
+  align-self: stretch;
+  width: 100%;
+  padding: 12px;
+}
+
+.post-form-container-focus .post-form-photos {
+  display: flex;
+}
+
+.post-form-photos-thumb, .post-form-photos-input-file {
+  width: 100px;
+  height: 100px;
+}
+
+.post-form-photos-input-file {
+  font-size: 30px;
+  color: #ddd;
+  text-align: center;
+  line-height: 100px;
+  border: 2px dashed #ddd;
+  cursor: pointer;
+}
+
+.post-form-photos-input-file:hover {
+  color: #bbb;
+}
+
+.post-form-share-button-wrapper {
+  align-self: stretch;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
+
 .post-form-share-button {
   display: none;
   font-weight: bold;
