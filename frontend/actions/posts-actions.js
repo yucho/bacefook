@@ -6,7 +6,9 @@ export const createPost = (post) => (dispatch) => (
   $.ajax({
     url: 'api/posts',
     method: 'POST',
-    data: post
+    data: post,
+    contentType: false,
+    processData: false
   })
     .then(
       (success) => dispatch(receivePost(success)),

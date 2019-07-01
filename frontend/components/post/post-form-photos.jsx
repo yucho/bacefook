@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const PostFormPhotos = ({ active, files, setFiles }) => {
   return <div className={`post-form-photos ${active ? 'active' : ''}`}>

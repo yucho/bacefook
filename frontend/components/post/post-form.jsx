@@ -22,11 +22,16 @@ const PostForm = ({postable_id = null, postable_type = 'User'}) => {
       <PostFormHeader tab={tab} setTab={setTab} />
       <form className="post-form" onSubmit={(e) => {
         e.preventDefault();
-        const post = { post: { body, postable_id, postable_type } };
+        const formData = new FormData();
+        formData.append('post[body]', body);
+        formData.append('post[postable_id]', postable_id);
+        formData.append('post[postable_type]', postable_type);
         if (tab === 1) {
-          post['photos'] = Object.keys(files).map((i) => files[i]);
+          for(const i of Object.keys(files)) {
+            formData.append('post[files][]', files[i]);
+          }
         }
-        dispatch(createPost(post));
+        dispatch(createPost(formData));
         setBody('');
         setFiles({});
         setFocus(false);
