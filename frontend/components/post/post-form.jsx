@@ -22,7 +22,7 @@ const PostForm = ({postable_id = null, postable_type = 'User'}) => {
         <Textarea onChange={handleUpdate(setBody)} value={body} placeholder="What's on your mind?" />
         <Prompt when={!!body} message="You haven't finished your post yet. Do you want to leave without finishing?" />
         <PostFormPhotos />
-        <fieldset class="post-form-share-button-wrapper">
+        <fieldset className="post-form-share-button-wrapper">
           <input type="submit" value="Share" className="post-form-share-button" />
         </fieldset>
       </form>

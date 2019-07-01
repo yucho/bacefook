@@ -59,11 +59,21 @@
 
 .post-form-container-focus .post-form-photos {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .post-form-photos-thumb, .post-form-photos-input-file {
   width: 100px;
   height: 100px;
+  margin-top: 6px;
+  margin-right: 6px;
+}
+
+.post-form-photos-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
 }
 
 .post-form-photos-input-file {
