@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import ModalConfirm from 'components/ui/modal-confirm';
+import PostPhotos from 'components/post/post-photos';
 import CommentIndex from 'components/comment/comment-index';
 import { destroyPost } from 'actions/posts-actions';
 
@@ -43,6 +44,7 @@ const PostShow = ({ poster, post }) => {
       <article className="post-body">
         <p>{body}</p>
       </article>
+      <PostPhotos post={post} />
       <aside className="post-likes-and-comments">
         <ul>
           <li><i className="sprite post-like-logo"></i><span>Like</span></li>

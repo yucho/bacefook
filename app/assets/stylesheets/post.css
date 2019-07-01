@@ -254,6 +254,37 @@ i.post-dropdown-menu-icon:hover {
   white-space: pre-line;
 }
 
+.post-photos-container {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  padding-top: 100%;
+}
+
+.post-photos {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.post-photos > div {
+  overflow: hidden;
+}
+
+.post-photos > div img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
 .post-likes-and-comments {
   color: #606770;
   margin: 0;
@@ -282,22 +313,17 @@ i.post-dropdown-menu-icon:hover {
   align-items: center;
 }
 
-i.post-like-logo {
-  width: 18px;
-  height: 18px;
-  background-position: -19px -246px;
-  -ms-high-contrast-adjust: none;
+i.post-like-logo, i.post-comment-logo {
   display: inline-block;
+  height: 18px;
+  width: 18px;
   margin-right: 6px;
 }
 
+i.post-like-logo {
+  background-position: -19px -246px;
+}
+
 i.post-comment-logo {
-  display: inline-block;
-  height: 18px;
-  width: 18px;
-  margin: 0 6px -3px 0;
-  min-width: 18px;
-  position: relative;
-  top: -2px;
   background-position: -83px -644px;
 }

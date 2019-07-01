@@ -17,7 +17,7 @@ export const createComment = (comment) => (dispatch) => (
 export const fetchComment = (id) => (dispatch) => (
   $.ajax({
     url: `api/comments/${id}`,
-    method: 'POST',
+    method: 'GET',
   })
     .then(
       (success) => dispatch(receiveComment(success)),

@@ -56,8 +56,12 @@ class Api::PostsController < ApplicationController
 
   def create_dependents
     if @post.files
-      @post.files.each do |file|
-        @post.photos << current_user.photos.create(file: file)
+      if @post.files.length == 1
+        @post.photos << current_user.photos.create(file: files[0], description: @post)
+      else
+        @post.files.each do |file|
+          @post.photos << current_user.photos.create(file: file)
+        end
       end
     end
   end

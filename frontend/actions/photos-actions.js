@@ -17,7 +17,18 @@ export const createPhoto = (photo) => (dispatch) => (
 export const fetchPhoto = (id) => (dispatch) => (
   $.ajax({
     url: `api/photos/${id}`,
-    method: 'POST',
+    method: 'GET',
+  })
+    .then(
+      (success) => dispatch(receivePhoto(success)),
+      (error) => console.log(error)
+    )
+);
+
+export const fetchPostPhotos = (id) => (dispatch) => (
+  $.ajax({
+    url: `api/posts/${id}/photos`,
+    method: 'GET',
   })
     .then(
       (success) => dispatch(receivePhoto(success)),

@@ -14,7 +14,7 @@ else
 
   users = User.all # For now, just send all users
   comments = Comment.all # For now, just send all comments
-  photos = Photo.all
+  photos = Photo.all # For now, just send all photos
 
   json.users do
     json.array! users do |user|

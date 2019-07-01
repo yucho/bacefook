@@ -11,7 +11,7 @@ class Api::PhotosController < ApplicationController
   end
 
   def index
-    @photos = Photo.where(account: current_user)
+    @photos ||= Photo.with_attached_file.where(account: current_user)
   end
 
   def destroy
@@ -26,6 +26,6 @@ class Api::PhotosController < ApplicationController
   end
 
   def set_photo
-    @photo = Photo.find(params[:id])
+    @photo = Photo.with_attached_file.find(params[:id])
   end
 end
