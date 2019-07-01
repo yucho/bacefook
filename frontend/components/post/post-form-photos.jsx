@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
-const PostFormPhotos = () => {
+const PostFormPhotos = ({ active }) => {
   const [files, setFiles] = useState({});
-  return <div className="post-form-photos">
+  return <div className={`post-form-photos ${active ? 'active' : ''}`}>
     {Object.keys(files).map((key) => <PhotoPreview key={key} file={files[key]} />)}
     <input type="file" onChange={(e) => {
         let counter = Object.keys(files).length;
