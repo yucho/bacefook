@@ -11,6 +11,8 @@ class User < ApplicationRecord
   has_many :posts, as: :poster
   has_many :timeline_posts, as: :postable, class_name: :Post
 
+  has_many :comments, as: :commenter
+
   has_many :friend_requests, dependent: :destroy
   has_many :pending_friends, through: :friend_requests, source: :friend
 

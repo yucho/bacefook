@@ -5,6 +5,8 @@ class Post < ApplicationRecord
   has_many :post_fields
   has_many :photos, through: :post_fields, source: :field, source_type: "Photo"
 
-  validates :body, presence: true, length: { maximum: 10000 }
+  validates :body, length: { maximum: 10000 }
   validates :poster, :postable, presence: true
+
+  attr_accessor :files
 end

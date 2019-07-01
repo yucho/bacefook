@@ -13,8 +13,8 @@ else
   .uniq
 
   users = User.all # For now, just send all users
-
   comments = Comment.all # For now, just send all comments
+  photos = Photo.all
 
   json.users do
     json.array! users do |user|
@@ -24,10 +24,11 @@ else
       json.email user.email
       json.phone user.phone
       json.posts { json.array! user.posts, :id }
+      json.photos { json.array! user.photos, :id }
     end
   end
 
   json.partial! "api/posts/index", posts: posts
-
   json.partial! "api/comments/index", comments: comments
+  json.partial! "api/photos/index", photos: photos
 end

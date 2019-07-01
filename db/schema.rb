@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_30_050643) do
+ActiveRecord::Schema.define(version: 2019_07_01_081636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -73,6 +73,7 @@ ActiveRecord::Schema.define(version: 2019_06_30_050643) do
     t.bigint "account_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "post_id"
     t.index ["account_type", "account_id"], name: "index_photos_on_account_type_and_account_id"
   end
 
@@ -88,9 +89,9 @@ ActiveRecord::Schema.define(version: 2019_06_30_050643) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "postable_type", null: false
-    t.bigint "postable_id", null: false
-    t.text "body", null: false
+    t.string "postable_type"
+    t.integer "postable_id"
+    t.text "body"
     t.datetime "published_at", default: -> { "CURRENT_TIMESTAMP" }
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

@@ -1,5 +1,6 @@
 class Api::PostsController < ApplicationController
   before_action :set_post, only: [:show, :update, :destroy]
+  after_save :create_dependents
 
   def create
     # Temporarily write on your own timeline
@@ -45,10 +46,18 @@ class Api::PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:body, :postable_id, :postable_type)
+    params.require(:post).permit(:body, :postable_id, :postable_type, :files)
   end
 
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def create_dependents
+    if @post.files
+      @post.files.each do |file|
+        @post.photos << current_user.photos.create(file: file)
+      end
+    end
   end
 end

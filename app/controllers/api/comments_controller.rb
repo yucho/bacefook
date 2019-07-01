@@ -10,7 +10,7 @@ class Api::CommentsController < ApplicationController
   end
 
   def index
-    @comment = Comment.where(author: current_user)
+    @comments = Comment.where(author: current_user)
   end
 
   def update
