@@ -1,4 +1,4 @@
 class PostField < ApplicationRecord
   belongs_to :post
-  belongs_to :field_of, polymorphic: true
+  belongs_to :field, polymorphic: true
 end

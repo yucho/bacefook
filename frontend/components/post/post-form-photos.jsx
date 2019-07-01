@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-const PostFormPhotos = ({ active }) => {
-  const [files, setFiles] = useState({});
+const PostFormPhotos = ({ active, files, setFiles }) => {
   return <div className={`post-form-photos ${active ? 'active' : ''}`}>
     {Object.keys(files).map((key) => <PhotoPreview key={key} file={files[key]} />)}
     <input type="file" onChange={(e) => {
