@@ -11,7 +11,6 @@ class Api::PostsController < ApplicationController
       end
       @post.postable = klass.find(post_params[:postable_id])
     end
-
     if(@post.save)
       create_dependents
       @post = Post.find(@post.id) # Because default is set by database
@@ -57,7 +56,7 @@ class Api::PostsController < ApplicationController
   def create_dependents
     if @post.files
       if @post.files.length == 1
-        @post.photos << current_user.photos.create(file: files[0], description: @post)
+        @post.photos << current_user.photos.create(file: @post.files[0], description: @post)
       else
         @post.files.each do |file|
           @post.photos << current_user.photos.create(file: file)

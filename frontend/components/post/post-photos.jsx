@@ -1,18 +1,8 @@
 import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchPostPhotos } from 'actions/photos-actions';
+import { useSelector } from 'react-redux';
 
 const PostPhotos = ({ post }) => {
   const photos = useSelector((state) => state.photos);
-  const dispatch = useDispatch();
-  useEffect(() => {
-    for(const photo_id of post.photos) {
-      if (!photos[photo_id]){
-        dispatch(fetchPostPhotos(post.id));
-        break;
-      }
-    }
-  }, [post, photos]);
   return post.photos.length === 0 ? <></> :
   <section className="post-photos-container">
     <div className="post-photos">

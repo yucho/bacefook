@@ -1,7 +1,7 @@
 class Photo < ApplicationRecord
   belongs_to :account, polymorphic: true, dependent: :destroy
+  belongs_to :description, foreign_key: :post_id, class_name: "Post"
   has_many :post_fields, as: :field
-  has_one :description, foreign_key: :post_id, class_name: 'Post'
 
   has_one_attached :file
 

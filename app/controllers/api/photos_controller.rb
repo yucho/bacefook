@@ -2,7 +2,7 @@ class Api::PhotosController < ApplicationController
   before_action :set_photo, only: [:show, :destroy]
 
   def create
-    @photo = current_user.photos.new(comment_params)
+    @photo = current_user.photos.new(photo_params)
     if @photo.save
       render json: @photo, status: :ok
     else

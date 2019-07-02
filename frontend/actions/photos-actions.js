@@ -31,7 +31,7 @@ export const fetchPostPhotos = (id) => (dispatch) => (
     method: 'GET',
   })
     .then(
-      (success) => dispatch(receivePhoto(success)),
+      (success) => dispatch(receivePhotos(success.photos)),
       (error) => console.log(error)
     )
 );

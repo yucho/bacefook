@@ -1,9 +1,12 @@
+import { fetchPostPhotos } from 'actions/photos-actions';
+
 export const RECEIVE_POSTS = 'RECEIVE_POSTS';
 export const RECEIVE_POST = 'RECEIVE_POST';
 export const REMOVE_POST = 'REMOVE_POST';
 
-export const createPost = (post) => (dispatch) => (
-  $.ajax({
+export const createPost = (post) => (dispatch) => {
+  const next = post.get('post[files][]') ? fetchPostPhotos : null;
+  return $.ajax({
     url: 'api/posts',
     method: 'POST',
     data: post,
@@ -11,10 +14,13 @@ export const createPost = (post) => (dispatch) => (
     processData: false
   })
     .then(
-      (success) => dispatch(receivePost(success)),
+      (success) => {
+        dispatch(receivePost(success));
+        if (next) dispatch(next(success.id));
+      },
       (error) => console.log(error)
     )
-);
+    };
 
 export const fetchPost = (id) => (dispatch) => (
   $.ajax({
