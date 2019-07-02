@@ -23,8 +23,8 @@ else
       json.last_name user.last_name
       json.email user.email
       json.phone user.phone
-      json.posts { json.array! user.posts, :id }
-      json.photos { json.array! user.photos, :id }
+      json.posts(user.posts.map { |post| post.id })
+      json.photos(user.photos.map{ |photo| photo.id })
     end
   end
 

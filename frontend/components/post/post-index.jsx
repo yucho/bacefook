@@ -11,7 +11,13 @@ const PostIndex = () => {
   return (
     <section className="post-index">
       {
-        newest.map(id => {
+        newest.filter((id) => {
+          const photoDescription = posts[id].describing;
+          if (photoDescription && !posts[id].photos.includes(photoDescription)) {
+            return false;
+          }
+          return true;
+        }).map((id) => {
           const post = posts[id];
           const { poster_id, poster_type } = post;
           return <Post key={id} post={post} poster={{ poster_id, poster_type }}/>
