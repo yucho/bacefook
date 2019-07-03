@@ -11,7 +11,7 @@ const LoginForm = ({ className }) => {
   return (
     <form onSubmit={handleSubmit(submit)} className={className}>
       <label>Email or Phone<br />
-        <input onChange={handleUpdate(setUser)} type="email" value={user} />
+        <input onChange={handleUpdate(setUser)} type="text" value={user} />
       </label>
       <label>Password<br/>
         <input onChange={handleUpdate(setPassword)} type="password" value={password} />

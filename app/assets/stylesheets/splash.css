@@ -32,7 +32,7 @@
   font-size: 12px;
 }
 
-.login-form input[type="email"], .login-form input[type="password"] {
+.login-form input[type="text"], .login-form input[type="password"] {
   width: 150px;
   min-height: 24px;
   margin-top: 4px;
