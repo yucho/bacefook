@@ -54,29 +54,11 @@ const Splash = props => {
           <li>日本語</li>
         </ul>
         <ul className="splash-footer-nav">
-          <li><Link to="/">Sign Up</Link></li>
-          <li><Link to="/">Log In</Link></li>
-          <li><Link to="/">Messenger</Link></li>
-          <li><Link to="/">Facebook Lite</Link></li>
-          <li><Link to="/">Find Friends</Link></li>
-          <li><Link to="/">People</Link></li>
-          <li><Link to="/">Profiles</Link></li>
-          <li><Link to="/">Pages</Link></li>
-          <li><Link to="/">Page Categories</Link></li>
-          <li><Link to="/">Places</Link></li>
-          <li><Link to="/">Games</Link></li>
-          <li><Link to="/">Locations</Link></li>
-          <li><Link to="/">Marketplace</Link></li>
-          <li><Link to="/">Groups</Link></li>
-          <li><Link to="/">Instagram</Link></li>
-          <li><Link to="/">Local</Link></li>
-          <li><Link to="/">Fundraisers</Link></li>
-          <li><Link to="/">About</Link></li>
-          <li><Link to="/">Create Ad</Link></li>
-          <li><Link to="/">Create Page</Link></li>
-          <li><Link to="/">Developers</Link></li>
-          <li><Link to="/">Careers</Link></li>
-          <li><Link to="/">Privacy</Link></li>
+          <li>Sign Up</li>
+          <li>Log In</li>
+          <li><a href="https://github.com/yucho">Creator's GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/yuchoho/">Creator's LinkedIn</a></li>
+          <li><a href="https://yuchoho.com/">Creator's Website</a></li>
         </ul>
         <small className="splash-footer-copyright">Bacefook &#9728; 2019</small>
       </footer>
