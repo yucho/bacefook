@@ -42,16 +42,16 @@ const Splash = props => {
       <footer className="splash-outer splash-footer">
         <ul className="splash-footer-locale">
           <li>English (US)</li>
-          <li><Link to="/">Español</Link></li>
-          <li><Link to="/">Français (France)</Link></li>
-          <li><Link to="/">中文(简体)</Link></li>
-          <li><Link to="/">العربية</Link></li>
-          <li><Link to="/">Português (Brasil)</Link></li>
-          <li><Link to="/">Italiano</Link></li>
-          <li><Link to="/">한국어</Link></li>
-          <li><Link to="/">Deutsch</Link></li>
-          <li><Link to="/">हिन्दी</Link></li>
-          <li><Link to="/">日本語</Link></li>
+          <li>Español</li>
+          <li>Français (France)</li>
+          <li>中文(简体)</li>
+          <li>العربية</li>
+          <li>Português (Brasil)</li>
+          <li>Italiano</li>
+          <li>한국어</li>
+          <li>Deutsch</li>
+          <li>हिन्दी</li>
+          <li>日本語</li>
         </ul>
         <ul className="splash-footer-nav">
           <li><Link to="/">Sign Up</Link></li>
