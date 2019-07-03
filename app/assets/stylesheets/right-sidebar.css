@@ -2,6 +2,11 @@
   width: 308px;
 }
 
+.right-sidebar-sticky {
+  position: sticky;
+  top: 12px;
+}
+
 .right-sidebar-friends-suggestion-container,
 .right-sidebar-language-selection-container {
   width: 100%;

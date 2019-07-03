@@ -3,24 +3,47 @@
   padding: 0;
 }
 
-.main-content-sidebar > ul {
+.main-content-sidebar ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  position: sticky;
+  top: 12px;
 }
 
-.main-content-sidebar > ul > li {
+.main-content-sidebar ul li {
   font-size: 13px;
   min-height: 20px;
   padding: 4px 0;
+  border: 1px solid rgba(0,0,0,0);
+  border-radius: 3px;
+  transition: border 0.1s ease;
 }
 
-.main-content-sidebar > ul > li > i {
+.main-content-sidebar ul li:hover,
+.main-content-sidebar ul a:first-child li {
+  background: #f5f6f7;
+  border: 1px solid #dadde1;
+}
+
+.main-content-sidebar ul a:first-child {
+  font-weight: bold;
+}
+
+.main-content-sidebar i {
   display: inline-block;
   width: 21px;
   height: 21px;
   margin-right: 4px;
   vertical-align: middle;
+}
+
+.main-content-sidebar a {
+  color: #111;
+}
+
+.main-content-sidebar a:hover {
+  text-decoration: none;
 }
 
 .icon-newsfeed {
@@ -125,4 +148,16 @@
 
 .icon-fundraisers {
   background-position: -105px -454px;
+}
+
+.icon-github {
+  background-position: 0px 0px;
+}
+
+.icon-homepage {
+  background-position: 0px -21px;
+}
+
+.icon-linkedin {
+  background-position: 0px -42px;
 }

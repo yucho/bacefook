@@ -5,9 +5,11 @@ import Copyright from 'components/news-feed/copyright';
 
 const RideSidebar = () => {
   return <aside className="right-sidebar-container">
-    <FriendsSuggestion />
-    <LanguageSelection />
-    <Copyright />
+    <div className="right-sidebar-sticky">
+      <FriendsSuggestion />
+      <LanguageSelection />
+      <Copyright />
+    </div>
   </aside>
 };
 
