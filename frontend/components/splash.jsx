@@ -56,9 +56,9 @@ const Splash = props => {
         <ul className="splash-footer-nav">
           <li>Sign Up</li>
           <li>Log In</li>
-          <li><a href="https://github.com/yucho">Creator's GitHub</a></li>
-          <li><a href="https://www.linkedin.com/in/yuchoho/">Creator's LinkedIn</a></li>
-          <li><a href="https://yuchoho.com/">Creator's Website</a></li>
+          <li><a href="https://github.com/yucho">GitHub</a></li>
+          <li><a href="https://www.linkedin.com/in/yuchoho/">LinkedIn</a></li>
+          <li><a href="https://yuchoho.com/">Creator Website</a></li>
         </ul>
         <small className="splash-footer-copyright">Bacefook &#9728; 2019</small>
       </footer>
