@@ -63,7 +63,7 @@ const CommentShow = ({ comment }) => {
     return () => unsubscribe(cb);
   }, []);
   return <section>
-    <Menu menu={menu} hide={show(false)} />
+    <Menu menu={menu} hide={() => show(false)} />
     {comment.body}
   </section>;
 };
