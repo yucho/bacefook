@@ -2,7 +2,7 @@ class Api::LikesController < ApplicationController
   before_action :set_like, only: [:destroy]
 
   def create
-    @like = Like.new(like_params)
+    @like = Like.new(like_params.merge(user: current_user))
     if @like.save
       render json: @like, status: :ok
     else
@@ -28,6 +28,6 @@ class Api::LikesController < ApplicationController
   end
 
   def like_params
-    params.require(:like).permit(:user_id, :likeable_id, :likeable_type, :reaction)
+    params.require(:like).permit(:likeable_id, :likeable_type, :reaction)
   end
 end

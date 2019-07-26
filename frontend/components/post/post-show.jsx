@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import CommentIndex from 'components/comment/comment-index';
-import LikeForm from 'components/like/like-form';
 import ModalConfirm from 'components/ui/modal-confirm';
-import PostPhotos from 'components/post/post-photos';
+import PostLikeComment from './post-like-comment';
+import PostPhotos from './post-photos';
 import { destroyPost } from 'actions/posts-actions';
 
 const PostShow = ({ poster, post }) => {
@@ -30,7 +30,7 @@ const PostShow = ({ poster, post }) => {
 
   useEffect(dropdown(toggle, [icon, menu]), []);
 
-  return <>
+  return <PostShowContext.Provider value={{ post }}>
     <section className="post-container">
       <section className="post-header">
         <div className="post-circular-image" />
@@ -46,18 +46,13 @@ const PostShow = ({ poster, post }) => {
         <p>{body}</p>
       </article>
       <PostPhotos post={post} />
-      <aside className="post-likes-and-comments">
-        <ul>
-          <li><i className="sprite post-like-logo"></i><LikeForm className="post-like-form" likes={post.likes} /></li>
-          <li><i className="sprite2 post-comment-logo"></i><span>Comment</span></li>
-        </ul>
-      </aside>
+      <PostLikeComment />
     </section>
     <ModalConfirm className="modal-confirm-delete-post"
       opts={deleteOpts(post)} open={openDelete} close={set(setOpenDelete, false)}
     />
     <CommentIndex post={post} />
-  </>
+  </PostShowContext.Provider>
 };
 
 const dropdown = (toggle, elements) => () => {
@@ -89,3 +84,4 @@ const deleteOpts = (post) => ({
 });
 
 export default PostShow;
+export const PostShowContext = React.createContext();

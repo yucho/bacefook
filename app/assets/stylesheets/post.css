@@ -328,3 +328,18 @@ i.post-like-logo {
 i.post-comment-logo {
   background-position: -83px -644px;
 }
+
+.post-like-button:hover {
+  cursor: pointer;
+  background: #eee;
+  user-select: none;
+  transition: transform 0.2s linear;
+}
+
+.post-like-button:active {
+  transform: scale(0.95);
+}
+
+.post-like-button.post-like-button-clicked-like {
+  color: #3784FF;
+}
