@@ -52,8 +52,7 @@ const PostLikeComment = () => {
         <i className="sprite post-like-logo"></i>
         <span>Like</span>
       </li>
-      <li onClick={debug}
-      ><i className="sprite2 post-comment-logo"></i><span>Comment</span></li>
+      <li><i className="sprite2 post-comment-logo"></i><span>Comment</span></li>
     </ul>
   </aside>
 };
