@@ -2,7 +2,7 @@ class Like < ApplicationRecord
   belongs_to :user
   belongs_to :likeable, polymorphic: true
 
-  validates :user, presence: true
+  validates :user, presence: true, uniqueness: { scope: :likeable }
   validates :likeable, :reaction, presence: true
 
   before_validation :default_reaction
