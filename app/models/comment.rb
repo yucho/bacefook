@@ -2,6 +2,7 @@ class Comment < ApplicationRecord
   belongs_to :commenter, polymorphic: true
   belongs_to :commentable, polymorphic: true
   has_many :comments, as: :commentable
+  has_many :likes, as: :likeable
   alias_attribute :author, :commenter
   alias_attribute :target, :commentable
   alias_attribute :replies, :comments

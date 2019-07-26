@@ -10,6 +10,10 @@ class Api::LikesController < ApplicationController
     end
   end
 
+  def index
+    @likes = Like.all
+  end
+
   def destroy
     if @like.user === current_user
       @like.destroy

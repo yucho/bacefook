@@ -12,9 +12,11 @@ else
   SQL
   .uniq
 
-  users = User.all # For now, just send all users
-  comments = Comment.all # For now, just send all comments
-  photos = Photo.all # For now, just send all photos
+  # For now, just send all data ever
+  users = User.all 
+  comments = Comment.all
+  likes = Like.all 
+  photos = Photo.all
 
   json.currentUser current_user.id
   json.users do
@@ -32,4 +34,5 @@ else
   json.partial! "api/posts/index", posts: posts
   json.partial! "api/comments/index", comments: comments
   json.partial! "api/photos/index", photos: photos
+  json.partial! "api/likes/index", likes: likes
 end

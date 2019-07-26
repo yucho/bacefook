@@ -4,3 +4,4 @@ json.(@comment, :id, :commenter_id, :commenter_type, :commentable_id, :commentab
 json.comments do
   json.array! @comment.comments.map { |comment| comment.id }
 end
+json.likes(@comment.likes.map { |like| like.id })
