@@ -15,7 +15,7 @@
   padding: 0;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  border-bottom: 1px solid  #dadde1;
+  border-bottom: 1px solid #dadde1;
   background: #f5f6f7;
 }
 
@@ -26,8 +26,12 @@
   font-size: 12px;
   letter-spacing: 0.03em;
   line-height: 14px;
-  color: #4b4f56;
+  color: #385898;
   cursor: pointer;
+}
+
+h3.post-form-tab-active {
+  color: #4b4f56;
 }
 
 .post-form-header-separator {
