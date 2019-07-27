@@ -325,6 +325,10 @@ i.post-like-logo {
   background-position: -19px -246px;
 }
 
+.post-like-button-clicked-like i.post-like-logo {
+  background-position: -21px -226px;
+}
+
 i.post-comment-logo {
   background-position: -83px -644px;
 }
