@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import _ from 'lodash';
 import { signup, login } from 'actions/session-actions';
-import Icon from 'components/icon';
+import Icon from 'components/ui/icon';
 
 const SignupForm = () => {
   const [first_name, setFirstName] = useState('');

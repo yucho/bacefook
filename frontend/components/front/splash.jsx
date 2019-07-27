@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import LoginForm from 'components/login-form';
-import SignupForm from 'components/signup-form';
-import Icon from 'components/icon';
+import LoginForm from 'components/front/login-form';
+import SignupForm from 'components/front/signup-form';
+import Icon from 'components/ui/icon';
 
 const Splash = props => {
   const logo = useSelector(({images}) => images['splash-logo']);
