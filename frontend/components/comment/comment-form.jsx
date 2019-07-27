@@ -11,9 +11,14 @@ const CommentForm = ({ commentable_id, commentable_type }) => {
   const dispatch = useDispatch();
   const [text, setText] = useState('');
   const commentable = { id: commentable_id, type: commentable_type };
+
   return <section className="comment-form-container">
     <UserIcon className="comment-form-user-icon" user={user} />
-    <Textarea className="comment-form-textarea" value={text} onChange={update(setText)}
+    <Textarea
+      className="comment-form-textarea"
+      id={`comment-form-textarea-${commentable_type.toLowerCase()}-${commentable_id}`}
+      value={text}
+      onChange={update(setText)}
       placeholder="Write a comment..."
       onKeyDown={submit(text, user, commentable, dispatch, setText)} />
   </section>;

@@ -338,16 +338,6 @@ i.post-num-likes-icon {
   padding: 0;
 }
 
-.post-likes-and-comments > ul > li {
-  padding: 8px 0px;
-  display: block;
-  width: 50%;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 i.post-like-logo, i.post-comment-logo {
   display: inline-block;
   height: 18px;
@@ -367,14 +357,40 @@ i.post-comment-logo {
   background-position: -83px -644px;
 }
 
-.post-like-button:hover {
+.post-like-button,
+.post-comment-button {
+  padding: 8px 0px;
+  display: block;
+  width: 50%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-comment-button {
+  padding: 0;
+}
+
+.post-comment-button label {
+  padding: 8px 0px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.post-like-button:hover,
+.post-comment-button > label:hover {
   cursor: pointer;
   background: #eee;
   user-select: none;
   transition: transform 0.2s linear;
 }
 
-.post-like-button:active {
+.post-like-button:active,
+.post-comment-button > label:active {
   transform: scale(0.95);
 }
 

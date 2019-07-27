@@ -64,7 +64,11 @@ const PostLikeComment = () => {
         <i className="sprite post-like-logo"></i>
         <span>Like</span>
       </li>
-      <li><i className="sprite2 post-comment-logo"></i><span>Comment</span></li>
+      <li className="post-comment-button">
+        <label htmlFor={`comment-form-textarea-post-${post.id}`}>
+          <i className="sprite2 post-comment-logo"></i><span>Comment</span>
+        </label>
+      </li>
     </ul>
   </aside>
 };
