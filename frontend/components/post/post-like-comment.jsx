@@ -5,7 +5,7 @@ import { createLike, destroyLike } from 'actions/likes-actions';
 import { fetchPost } from 'actions/posts-actions';
 
 const PostLikeComment = () => {
-  const [clicked, setClicked]             = useState(false);
+  const [clicked, setClicked] = useState(false);
   const [localReaction, setLocalReaction] = useState(null);
 
   const toggleLike = (reaction) => () => {
@@ -17,6 +17,9 @@ const PostLikeComment = () => {
     }
     if (!clicked) setClicked(true);
   };
+
+  const updateContext = useContext(PostShowContext).setCtxData;
+  useEffect(() => updateContext({ localReaction }), [localReaction]);
 
   const post = useContext(PostShowContext).post;
   const likes = useSelector((state) => state.likes);

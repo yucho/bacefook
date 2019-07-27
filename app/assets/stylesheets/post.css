@@ -286,6 +286,31 @@ i.post-dropdown-menu-icon:hover {
   overflow: hidden;
 }
 
+.post-num-likes {
+  font-size: 14px;
+  line-height: 16px;
+  color: #6a6d74;
+}
+
+i.post-num-likes-icon {
+  display: inline-block;
+  height: 18px;
+  width: 18px;
+  margin-right: 6px;
+  vertical-align: text-bottom;
+  position: relative;
+  top: 1px;
+}
+
+.post-num-likes-icon-like {
+  background-position: -19px -341px;
+}
+
+.post-num-likes-num {
+  display: inline-block;
+  padding: 12px 0;
+}
+
 .post-likes-and-comments {
   color: #606770;
   margin: 0;
