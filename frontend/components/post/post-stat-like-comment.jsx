@@ -3,6 +3,13 @@ import React, { useState, useContext } from 'react';
 import { useSelector } from 'react-redux';
 import { PostShowContext } from './post-show';
 
+const PostStatLikeComment = () => {
+  return <aside className="post-stat-like-comment">
+    <PostNumLikes />
+    <PostNumComments />
+  </aside>
+};
+
 const PostNumLikes = () => {
   const post = useContext(PostShowContext).post;
   const localReaction = useContext(PostShowContext).getCtxData().localReaction;
@@ -25,7 +32,7 @@ const PostNumLikes = () => {
   }).filter((user) => !!user) : [];
   const numOthers = localLikes.length - names.length;
   const shouldDisplay = !!localReaction || !!names.length || !!numOthers;
-  return shouldDisplay && <aside className="post-num-likes">
+  return shouldDisplay && <div className="post-num-likes">
     <span className="post-num-likes-icons">
       <i className="sprite post-num-likes-icon post-num-likes-icon-like" />
     </span>
@@ -35,7 +42,20 @@ const PostNumLikes = () => {
       {!!names.length && names.join(', ')}
       {!!numOthers && `, and ${numOthers} others`}
     </span>
-  </aside>
+  </div>
 };
 
-export default PostNumLikes;
+const PostNumComments = () => {
+  const post = useContext(PostShowContext).post;
+  const comments = useSelector((state) => state.comments);
+  const numComments = post.comments
+    .map((id) => 1 + (comments[id] ? comments[id].comments.length : 0))
+    .reduce((acc, num) => acc + num, 0);
+  return !!numComments && <div className="post-num-comments">
+    <span className="post-num-comments-text">
+      {`${numComments} Comment${numComments >= 2 ? 's' : ''}`}
+    </span>
+  </div>
+};
+
+export default PostStatLikeComment;

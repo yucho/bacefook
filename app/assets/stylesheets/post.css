@@ -286,9 +286,9 @@ i.post-dropdown-menu-icon:hover {
   overflow: hidden;
 }
 
-.post-num-likes {
+.post-stat-like-comment {
+  display: flex;
   font-size: 14px;
-  line-height: 16px;
   color: #6a6d74;
 }
 
@@ -307,6 +307,15 @@ i.post-num-likes-icon {
 }
 
 .post-num-likes-num {
+  display: inline-block;
+  padding: 12px 0;
+}
+
+.post-num-comments {
+  margin-left: auto;
+}
+
+.post-num-comments-text {
   display: inline-block;
   padding: 12px 0;
 }

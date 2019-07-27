@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import CommentIndex from 'components/comment/comment-index';
 import ModalConfirm from 'components/ui/modal-confirm';
 import PostLikeComment from './post-like-comment';
-import PostNumLikes from './post-num-likes';
+import PostStatLikeComment from './post-stat-like-comment';
 import PostPhotos from './post-photos';
 import { destroyPost } from 'actions/posts-actions';
 import { appendAccessor } from 'util/context-util';
@@ -50,7 +50,7 @@ const PostShow = ({ poster, post }) => {
         <p>{body}</p>
       </article>
       <PostPhotos post={post} />
-      <PostNumLikes />
+      <PostStatLikeComment />
       <PostLikeComment />
     </section>
     <ModalConfirm className="modal-confirm-delete-post"

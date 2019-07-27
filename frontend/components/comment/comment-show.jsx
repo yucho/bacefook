@@ -1,7 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useContext, useRef } from 'react';
+import { useDispatch } from 'react-redux';
 import UserIcon from 'components/ui/user-icon';
 import ModalConfirm from 'components/ui/modal-confirm';
+import { PostShowContext } from 'components/post/post-show';
 import { destroyComment } from 'actions/comments-actions';
+import { fetchPost } from 'actions/posts-actions';
 
 const CommentShow = ({ comment }) => {
   const [isMenu, showMenu] = useState(false);
@@ -18,6 +21,9 @@ const CommentShow = ({ comment }) => {
     document.body.addEventListener('click', hide);
     return () => document.body.removeEventListener('click', hide);
   }, []);
+
+  const post = useContext(PostShowContext).post;
+  const dispatch = useDispatch();
   return <section className="comment-show-container"
     onMouseMove={() => showIcon(true)}
     onMouseLeave={() => {if (!isMenu) showIcon(false)}}
@@ -31,17 +37,15 @@ const CommentShow = ({ comment }) => {
       </ul>
     </i>
     <ModalConfirm className="modal-confirm-delete-comment"
-      opts={deleteOpts(comment)} open={isDelete} close={() => showDelete(false)}
+      opts={{
+        action: () => destroyComment(comment)(dispatch).then(() => dispatch(fetchPost(post.id))),
+        title: 'Delete',
+        message: 'Are you sure you want to delete this comment?',
+        cancel: 'Cancel',
+        ok: 'Delete'
+      }} open={isDelete} close={() => showDelete(false)}
     />
   </section>
 };
-
-const deleteOpts = (comment) => ({
-  action: destroyComment(comment),
-  title: 'Delete',
-  message: 'Are you sure you want to delete this comment?',
-  cancel: 'Cancel',
-  ok: 'Delete'
-});
 
 export default CommentShow;
