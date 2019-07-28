@@ -55,7 +55,7 @@ const Splash = props => {
         </ul>
         <ul className="splash-footer-nav">
           <li>Sign Up</li>
-          <li>Log In</li>
+          <li><Link to='/login'>Log In</Link></li>
           <li><a href="https://github.com/yucho">GitHub</a></li>
           <li><a href="https://www.linkedin.com/in/yuchoho/">LinkedIn</a></li>
           <li><a href="https://yuchoho.com/">Creator Website</a></li>

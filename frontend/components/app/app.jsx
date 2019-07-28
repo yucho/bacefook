@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Splash from 'components/front/splash';
 import NewsFeed from 'components/news-feed/news-feed';
-import Header from 'components/header';
+import LoginPage from 'components/front/login-page';
 
-const App = ({ session, match, history }) => {
+const App = () => {
   const currentUser = useSelector((state) => state.session.id);
 
   useEffect(() => {
@@ -17,12 +17,12 @@ const App = ({ session, match, history }) => {
     return () => document.body.classList.remove("logged-in");
   }, [currentUser]);
 
-  return <>
-    {currentUser && <Header />}
+  return <Switch>
+    <Route path="/login" component={LoginPage} />
     <Route path="/" >
       {currentUser ? <NewsFeed /> : <Splash />}
     </Route>
-  </>
+  </Switch>
 };
 
 export default App;

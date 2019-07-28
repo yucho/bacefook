@@ -5,7 +5,7 @@ import configureStore from 'store/store';
 import preloadState from 'store/preload';
 import { receiveAllData } from 'actions/application-actions';
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('turbolinks:load', () => {
   const root = document.getElementById('root');
   const store = configureStore(preloadState());
   if (window.bacefook.preloadedState) {
