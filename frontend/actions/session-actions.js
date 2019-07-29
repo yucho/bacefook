@@ -16,7 +16,7 @@ export const signup = user => dispatch => {
     );
 };
 
-export const login = session => dispatch => {
+export const login = session => dispatch => (
   SessionAPIUtil.requestLogin(session)
     .then(
       success => {
@@ -24,8 +24,8 @@ export const login = session => dispatch => {
         dispatch(receiveAllData(success));
       },
       error => dispatch(receiveSessionError(error))
-    );
-};
+    )
+);
 
 export const logout = () => dispatch => {
   SessionAPIUtil.requestLogout()

@@ -1,8 +1,8 @@
 const thunk = ({ dispatch }) => next => action => {
   if(typeof action === 'function') {
-    action(dispatch);
+    return action(dispatch);
   } else {
-    next(action);
+    return next(action);
   }
 };
 

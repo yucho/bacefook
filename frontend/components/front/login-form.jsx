@@ -1,15 +1,21 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { login } from 'actions/session-actions';
 
-const LoginForm = ({ className, placeholder }) => {
+const LoginForm = withRouter(({ className, placeholder, history }) => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
-  const submit = useCallback(() => dispatch(login({ email_or_phone: user, password })), [user, password]);
 
   return (
-    <form onSubmit={handleSubmit(submit)} className={className}>
+    <form className={className}
+      onSubmit={(e) => {
+        e.preventDefault();
+        dispatch(login({ email_or_phone: user, password }))
+          .then(() => history.push('/login'));
+      }}
+    >
       <label>Email or Phone<br />
         <input onChange={handleUpdate(setUser)} type="text" value={user}
           placeholder={placeholder ? 'Email or Phone Number' : ''}/>
@@ -21,12 +27,8 @@ const LoginForm = ({ className, placeholder }) => {
       <input type="submit" value="Log In" />
     </form>
   );
-};
+});
 
 const handleUpdate = setter => e => setter(e.target.value);
-const handleSubmit = submitter => e => {
-  e.preventDefault();
-  submitter();
-};
 
 export default LoginForm;
