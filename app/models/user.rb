@@ -1,24 +1,25 @@
+require "date"
+
 class User < ApplicationRecord
   include Utility::SanityChecker
 
+  validates :first_name, :last_name, presence: true, length: { minimum: 1, maximum: 50 }
+  validate  :valid_email_or_phone, :valid_or_nil_email, :valid_or_nil_phone
+  validates :email, allow_nil: true, uniqueness: true, length: { minimum: 6, maximum: 254 }
+  validates :phone, allow_nil: true, uniqueness: true, length: { minimum: 5, maximum: 50 }
   validates :password_digest, presence: true
   validates :session_token,   presence: true, uniqueness: true
   validates :password,        presence: true, allow_nil: true, length: { minimum: 6, maximum: 64 }
-  validate  :valid_email_or_phone
-  with_options if: ->{ email_or_phone.nil? } do validate :valid_or_nil_email, :valid_or_nil_phone end
-  validates :email, :phone, allow_nil: true, uniqueness: true
+  validates :gender,          presence: true, inclusion: { in: %w(male female other) }
+  validate  :valid_birthday
 
   has_many :posts, as: :poster
   has_many :timeline_posts, as: :postable, class_name: :Post
-
   has_many :comments, as: :commenter
-
   has_many :friend_requests, dependent: :destroy
   has_many :pending_friends, through: :friend_requests, source: :friend
-
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
-
   has_many :photos, as: :account
 
   after_initialize :ensure_session_token
@@ -56,10 +57,10 @@ class User < ApplicationRecord
     end
 
     def valid_email_or_phone
-      return if email_or_phone.nil?
-
-      unless(valid_email?(email_or_phone) || valid_email?(email_or_phone))
-        errors.add(:base, :invalid_email_or_phone, message: "must provide valid email or phone")
+      email = self.email.nil? ? '' : self.email
+      phone = self.phone.nil? ? '' : self.phone
+      unless valid_email?(email) || valid_phone?(phone)
+          errors.add(:email_or_phone, "must be valid")
       end
     end
 
@@ -72,6 +73,16 @@ class User < ApplicationRecord
     def valid_or_nil_phone
       unless phone.nil? || valid_phone?(phone)
         errors.add(:phone, "must be valid")
+      end
+    end
+
+    def valid_birthday
+      if !self.birthday.instance_of? Date
+        errors.add(:birthday, "must be valid")
+      elsif self.birthday.year < 1905
+        errors.add(:birthday, "is too old")
+      elsif self.birthday > Time.now
+        errors.add(:birthday, "must be in the past")
       end
     end
 end

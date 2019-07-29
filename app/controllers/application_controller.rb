@@ -25,7 +25,6 @@ class ApplicationController < ActionController::Base
   private
 
     def error_handler(e)
-      errors = [e.to_s]
-      render json: { errors: errors }, status: :bad_request
+      render json: { errors: e.to_s }, status: :bad_request
     end
 end
