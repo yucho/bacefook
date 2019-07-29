@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 import { login } from 'actions/session-actions';
 
-const LoginForm = withRouter(({ className, placeholder, history }) => {
+const LoginForm = withRouter(({ className, isEmbedded, history }) => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
@@ -16,13 +16,13 @@ const LoginForm = withRouter(({ className, placeholder, history }) => {
           .then(() => history.push('/login'));
       }}
     >
-      <label>Email or Phone<br />
+      <label>{!isEmbedded && <>Email or Phone<br /></>}
         <input onChange={handleUpdate(setUser)} type="text" value={user}
-          placeholder={placeholder ? 'Email or Phone Number' : ''}/>
+          placeholder={!!isEmbedded ? 'Email or Phone Number' : ''}/>
       </label>
-      <label>Password<br/>
+      <label>{!isEmbedded && <>Password<br /></>}
         <input onChange={handleUpdate(setPassword)} type="password" value={password}
-          placeholder={placeholder ? 'Password' : ''}/>
+          placeholder={!!isEmbedded ? 'Password' : ''}/>
       </label>
       <input type="submit" value="Log In" />
     </form>

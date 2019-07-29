@@ -39,3 +39,24 @@
   border-radius: 2px;
   text-align: center;
 }
+
+.fat-header {
+  display: grid;
+  grid-template-columns: 1fr 580px 400px 1fr;
+  align-items: center;
+  min-width: 980px;
+  height: 82px;
+  background-color: #3b5998;
+  background-image: linear-gradient(#4e69a2, #3b5998 50%);
+  border-bottom: 1px solid #133783;
+}
+
+.header-logo-wrapper {
+  grid-column: 2;
+}
+
+.header-logo {
+  width: 170px;
+  height: 33px;
+  margin-top: 17px;
+}

@@ -1,0 +1,115 @@
+.login-page {
+  margin: 0;
+  padding: 80px 0;
+  background: #e9ebee;
+}
+
+.login-page-form-container {
+  width: 614px;
+  margin: auto;
+  padding: 30px 0;
+  background: #fff;
+  border: 1px solid  #dadde1;
+  border-radius: 3px;
+}
+
+.login-page h2 {
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-page-form input {
+  display: block;
+  font-size: 14px;
+  margin: 12px auto 0;
+  padding: 5px 8px;
+  width: 302px;
+  min-height: 34px;
+  border: 1px solid #dddfe2;
+}
+
+.login-page input:focus {
+  outline: none;
+}
+
+.login-page-form input[type="submit"] {
+  font-size: 14px;
+  font-weight: bold;
+  min-height: 44px;
+  color: #fff;
+  background: #4267b2;
+  border: 1px solid #4267b2;
+  border-radius: 2px;
+  padding: 0 6px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.login-page-or-divider {
+  position: relative;
+  width: 302px;
+  text-align: center;
+  margin: 20px auto;
+  color: #4b4f56;
+  font-size: 13px;
+  overflow: hidden;
+}
+
+.login-page-or-divider span::before, .login-page-or-divider span::after {
+  content: "";
+  height: 1px;
+  width: 9999px;
+  background: #ccd0d5;
+  position: absolute;
+  top: 50%;
+}
+
+.login-page-or-divider span::before {
+  right: 50%;
+  margin-right: 15px;
+}
+
+.login-page-or-divider span::after {
+  left: 50%;
+  margin-left: 15px;
+}
+
+.login-page input.create-new-account,
+.login-page input.demo-login {
+  font-size: 16px;
+  color: #fff;
+  width: 244px;
+  height: 44px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 12px;
+  text-shadow: 0 1px 2px rgba(0,0,0,.5);
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+.login-page input.create-new-account {
+  background: linear-gradient(#67ae55, #578843);
+  box-shadow: inset 0 1px 1px #a4e388;
+  border-color: #3b6e22 #3b6e22 #2c5115;
+  
+}
+
+.login-page input.create-new-account:hover {
+  background: linear-gradient(#79c466, #67a050);
+  box-shadow: inset 0 1px 1px #aeec93;
+}
+
+.login-page input.demo-login {
+  background: linear-gradient(#ae9655, #887243);
+  box-shadow: inset 0 1px 1px #e3d588;
+  border-color: #6e6022 #6e5622 #513e15;
+}
+
+.login-page input.demo-login:hover {
+  background: linear-gradient(#b9a160, #9c844e);
+  box-shadow: inset 0 1px 1px #ebdd8f;
+}

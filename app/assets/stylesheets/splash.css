@@ -1,15 +1,6 @@
 .splash-outer {
   min-width: 980px;
 }
-.splash-header {
-  display: grid;
-  grid-template-columns: 1fr 580px 400px 1fr;
-  align-items: center;
-  height: 82px;
-  background-color: #3b5998;
-  background-image: linear-gradient(#4e69a2, #3b5998 50%);
-  border-bottom: 1px solid #133783;
-}
 
 .login-form {
   display: flex;
@@ -53,13 +44,6 @@
 
 .login-form input[type="submit"]:hover {
   background: #4b72be;
-}
-
-.splash-logo {
-  width: 170px;
-  height: 33px;
-  margin-top: 17px;
-  grid-column: 2;
 }
 
 .splash-main {
@@ -112,35 +96,4 @@
 .splash-welcome .splash-welcome-emphasis {
   font-weight: bold;
   color: #000;
-}
-
-.splash-footer {
-  width: 980px;
-  margin: auto;
-  background: #fff;
-}
-
-.splash-footer-locale, .splash-footer-nav, .splash-footer-copyright {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  list-style: none;
-  font-size: 12px;
-  line-height: 1.6;
-  margin: 0;
-  padding: 8px 0;
-  color: #737373;
-}
-
-.splash-footer-locale {
-  padding-top: 20px;
-  border-bottom: 1px solid #dddfe2;
-}
-
-.splash-footer-locale li, .splash-footer-nav li {
-  padding-right: 20px;
-}
-
-.splash-footer-copyright {
-  font-size: 11px;
 }

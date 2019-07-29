@@ -1,0 +1,30 @@
+.fat-footer {
+  width: 980px;
+  margin: auto;
+  background: #fff;
+}
+
+.fat-footer-locale, .fat-footer-nav, .fat-footer-copyright {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+  font-size: 12px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 8px 0;
+  color: #737373;
+}
+
+.fat-footer-locale {
+  padding-top: 20px;
+  border-bottom: 1px solid #dddfe2;
+}
+
+.fat-footer-locale li, .fat-footer-nav li {
+  padding-right: 20px;
+}
+
+.fat-footer-copyright {
+  font-size: 11px;
+}
