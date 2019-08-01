@@ -4,6 +4,7 @@ import { receiveAllData } from 'actions/application-actions';
 export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 export const RECEIVE_SESSION_ERROR = 'RECEIVE_SESSION_ERROR';
+export const CLEAR_SESSION_ERROR = 'CLEAR_SESSION_ERROR';
 
 export const signup = user => dispatch => {
   SessionAPIUtil.requestSignup(user)
@@ -40,7 +41,7 @@ const receiveCurrentUser = ({ currentUser }) => ({
   currentUser
 });
 
-const logoutCurrentUser= session => ({
+const logoutCurrentUser = session => ({
   type: LOGOUT_CURRENT_USER,
   session
 });
@@ -48,4 +49,8 @@ const logoutCurrentUser= session => ({
 const receiveSessionError = errors => ({
   type: RECEIVE_SESSION_ERROR,
   errors
+});
+
+export const clearSessionError = () => ({
+  type: CLEAR_SESSION_ERROR
 });

@@ -2,50 +2,6 @@
   min-width: 980px;
 }
 
-.login-form {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  font-size: 12px;
-}
-
-.login-form > *:nth-child(1) {
-  margin-left: 21px;
-}
-
-.login-form > *:nth-child(n+1) {
-  margin-left: 14px;
-}
-
-.login-form label {
-  color: #fff;
-  font-size: 12px;
-}
-
-.login-form input[type="text"], .login-form input[type="password"] {
-  width: 150px;
-  min-height: 24px;
-  margin-top: 4px;
-  border: 1px solid #1d2a5b;
-}
-
-.login-form input[type="submit"] {
-  font-weight: bold;
-  min-height: 24px;
-  color: #fff;
-  background: #4267b2;
-  border: 1px solid #29487d;
-  border-radius: 2px;
-  padding: 0 6px;
-  text-align: center;
-  cursor: pointer;
-}
-
-.login-form input[type="submit"]:hover {
-  background: #4b72be;
-}
-
 .splash-main {
   display: grid;
   grid-template-columns: 1fr 580px 400px 1fr;

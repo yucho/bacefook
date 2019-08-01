@@ -4,8 +4,6 @@ class Api::SessionsController < ApplicationController
     if @user
       login(@user)
       render json: { currentUser: @user.id }
-    else
-      render json: { errors: ["Invalid credentials"] }, status: :unprocessable_entity
     end
   end
 

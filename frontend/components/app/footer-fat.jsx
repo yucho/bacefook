@@ -1,7 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { clearSessionError } from 'actions/session-actions';
 
 const FooterFat = ({ className }) => {
+  const dispatch = useDispatch();
   return <footer className={'fat-footer' + (className ? ' ' + className : '')}>
     <ul className="fat-footer-locale">
       <li>English (US)</li>
@@ -18,7 +21,11 @@ const FooterFat = ({ className }) => {
     </ul>
     <ul className="fat-footer-nav">
       <li>Sign Up</li>
-      <li><Link to='/login'>Log In</Link></li>
+      <li>
+        <Link to='/login' onClick={() => dispatch(clearSessionError())}>
+          Log In
+        </Link>
+      </li>
       <li><a href="https://github.com/yucho">GitHub</a></li>
       <li><a href="https://www.linkedin.com/in/yuchoho/">LinkedIn</a></li>
       <li><a href="https://yuchoho.com/">Creator Website</a></li>

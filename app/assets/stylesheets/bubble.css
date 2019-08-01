@@ -1,0 +1,72 @@
+.error-bubble-container {
+  position: relative;
+}
+
+.error-bubble {
+  display: none;
+  position: absolute;
+  color: #fff;
+  background: #be4b49;
+  border: 1px solid #9a3537;
+  padding: 12px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px #444;
+  min-width: 200px;
+  max-width: 300px;
+}
+
+.error-bubble-top,
+.error-bubble-right,
+.error-bubble-bottom,
+.error-bubble-left {
+  display: block;
+}
+
+/* .error-bubble-top:before,
+.error-bubble-right:before,
+.error-bubble-bottom:before,
+.error-bubble-left:before {
+  display: block;
+  position: absolute;
+  content: "";
+  width: 0px;
+  height: 0px;
+  border-top: 12px solid transparent;
+  border-left: 12px solid #be4b49;
+  border-right: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  outline: 1px solid #9a3537;
+}
+
+.error-bubble-top:before {
+  top: -24px;
+  left: 50%;
+  margin-left: -50%;
+} */
+
+
+.error-bubble-right:before {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  width: 0;
+  height: 0;
+  border: 12px solid #9a3537;
+  border-color: transparent #9a3537 transparent transparent;
+}
+
+.error-bubble-right:after {
+  position: absolute;
+  display: block;
+  content: "";
+  top: 50%;
+  left: 0;
+  transform: translate(-100%, -50%);
+  width: 0;
+  height: 0;
+  border: 10px solid #be4b49;
+  border-color: transparent #be4b49 transparent transparent;
+}

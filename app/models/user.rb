@@ -28,9 +28,12 @@ class User < ApplicationRecord
 
   def self.find_by_credential(email_or_phone, password)
     user = User.find_by(email: email_or_phone) || User.find_by(phone: email_or_phone)
-    return user if user && user.is_password?(password)
+    if user
+      return user if user.is_password?(password)
+      raise "Password is wrong"
+    end
 
-    nil # throw UserNotFound error?
+    raise ActiveRecord::RecordNotFound.new('Email or phone does not match any record', User)
   end
 
   def password=(password)
