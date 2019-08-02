@@ -7,7 +7,7 @@ export const REMOVE_POST = 'REMOVE_POST';
 export const createPost = (post) => (dispatch) => {
   const next = post.get('post[files][]') ? fetchPostPhotos : null;
   return $.ajax({
-    url: 'api/posts',
+    url: '/api/posts',
     method: 'POST',
     data: post,
     contentType: false,
@@ -24,7 +24,7 @@ export const createPost = (post) => (dispatch) => {
 
 export const fetchPost = (id) => (dispatch) => (
   $.ajax({
-    url: `api/posts/${id}`,
+    url: `/api/posts/${id}`,
     method: 'GET'
   })
     .then(
@@ -35,7 +35,7 @@ export const fetchPost = (id) => (dispatch) => (
 
 export const destroyPost = ({id}) => (dispatch) => (
   $.ajax({
-    url: `api/posts/${id}`,
+    url: `/api/posts/${id}`,
     method: 'DELETE'
   })
     .then(

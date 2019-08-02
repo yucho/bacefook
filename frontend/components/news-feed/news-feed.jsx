@@ -10,6 +10,7 @@ import PostIndex from 'components/post/post-index';
 const NewsFeed = () => {
   const dispatch = useDispatch();
   const users = useSelector((state) => state.users);
+  const posts = useSelector(state => state.posts);
   useEffect(() => {
     dispatch(fetchNewsFeed());
   }, []);
@@ -20,7 +21,7 @@ const NewsFeed = () => {
         <LeftSidebar />
         <section className="main-content-main-section">
           <PostForm />
-          <PostIndex />
+          <PostIndex posts={posts}  />
         </section>
         <RightSidebar />
     </main>

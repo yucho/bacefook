@@ -2,7 +2,7 @@ import xhrRequest from 'util/xhr-request';
 
 export const requestSignup = user => (
   xhrRequest({
-    url:'api/users',
+    url:'/api/users',
     method: 'POST',
     data: { user }
   })
@@ -10,7 +10,7 @@ export const requestSignup = user => (
 
 export const requestLogin = session => (
   xhrRequest({
-    url: 'api/session',
+    url: '/api/session',
     method: 'POST',
     data: { session }
   })
@@ -18,7 +18,7 @@ export const requestLogin = session => (
 
 export const requestLogout = () => (
   xhrRequest({
-    url:'api/session',
+    url:'/api/session',
     method: 'DELETE'
   })
 );

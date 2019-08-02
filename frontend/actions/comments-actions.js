@@ -4,7 +4,7 @@ export const REMOVE_COMMENT = 'REMOVE_COMMENT';
 
 export const createComment = (comment) => (dispatch) => (
   $.ajax({
-    url: 'api/comments',
+    url: '/api/comments',
     method: 'POST',
     data: comment
   })
@@ -16,7 +16,7 @@ export const createComment = (comment) => (dispatch) => (
 
 export const fetchComment = (id) => (dispatch) => (
   $.ajax({
-    url: `api/comments/${id}`,
+    url: `/api/comments/${id}`,
     method: 'GET',
   })
     .then(
@@ -27,7 +27,7 @@ export const fetchComment = (id) => (dispatch) => (
 
 export const destroyComment = ({ id }) => (dispatch) => (
   $.ajax({
-    url: `api/comments/${id}`,
+    url: `/api/comments/${id}`,
     method: 'DELETE'
   })
   .then(

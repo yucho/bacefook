@@ -4,7 +4,7 @@ export const REMOVE_PHOTO = 'REMOVE_PHOTO';
 
 export const createPhoto = (photo) => (dispatch) => (
   $.ajax({
-    url: 'api/photos',
+    url: '/api/photos',
     method: 'POST',
     data: photo
   })
@@ -16,7 +16,7 @@ export const createPhoto = (photo) => (dispatch) => (
 
 export const fetchPhoto = (id) => (dispatch) => (
   $.ajax({
-    url: `api/photos/${id}`,
+    url: `/api/photos/${id}`,
     method: 'GET',
   })
     .then(
@@ -27,7 +27,7 @@ export const fetchPhoto = (id) => (dispatch) => (
 
 export const fetchPostPhotos = (id) => (dispatch) => (
   $.ajax({
-    url: `api/posts/${id}/photos`,
+    url: `/api/posts/${id}/photos`,
     method: 'GET',
   })
     .then(
@@ -38,7 +38,7 @@ export const fetchPostPhotos = (id) => (dispatch) => (
 
 export const destroyPhoto = ({ id }) => (dispatch) => (
   $.ajax({
-    url: `api/photos/${id}`,
+    url: `/api/photos/${id}`,
     method: 'DELETE'
   })
     .then(

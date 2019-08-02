@@ -2,8 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Post from './post-show';
 
-const PostIndex = () => {
-  const posts = useSelector(state => state.posts);
+const PostIndex = ({ posts }) => {
   const newest = Object.keys(posts).sort((a, b) => (
     new Date(posts[b].published_at) - new Date(posts[a].published_at)
   ));
