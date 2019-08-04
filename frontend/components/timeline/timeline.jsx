@@ -31,10 +31,12 @@ const Timeline = ({ userId }) => {
 
   return <>
     <Header />
-    <LeftSiderbar />
-    <section className="timeline-main">
-      <PostForm />
-      <PostIndex posts={filteredPosts} />
+    <section className="timeline-container">
+      <LeftSiderbar />
+      <section className="timeline-content">
+        <PostForm />
+        <PostIndex posts={filteredPosts} />
+      </section>
     </section>
   </>
 };

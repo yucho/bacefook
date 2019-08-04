@@ -1,0 +1,19 @@
+.timeline-container {
+  width: 851px;
+  display: flex;
+  justify-content: space-between;
+  margin: 12px auto 0;
+}
+
+.timeline-left-sidebar {
+  width: 321px;
+}
+
+.timeline-left-sidebar-sticky {
+  position: sticky;
+  top: 12px;
+}
+
+.timeline-content {
+  width: 516px;
+}

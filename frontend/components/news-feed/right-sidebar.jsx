@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import FriendsSuggestion from 'components/news-feed/friends-suggestion';
-import LanguageSelection from 'components/news-feed/language-selection';
+import LanguageSelection from 'components/app/language-selection';
 import Copyright from 'components/app/copyright';
 
 const RideSidebar = () => {
