@@ -9,7 +9,6 @@ import { fetchNewsFeed } from 'actions/users-actions';
 const Timeline = ({ userId }) => {
   const posts = useSelector((state) => state.posts);
   const filteredPostIds = Object.keys(posts).filter((id) => {
-    console.log('filter:', id);
     if (posts[id].poster_type === 'User' && posts[id].poster_id === userId) {
       return true;
     } else if (posts[id].postable_type === 'User' && posts[id].postable_id === userId) {
@@ -27,14 +26,12 @@ const Timeline = ({ userId }) => {
     dispatch(fetchNewsFeed());
   }, []);
 
-  console.log('Timeline renders with postIds:', filteredPostIds);
-
   return <>
     <Header />
     <section className="timeline-container">
       <LeftSiderbar />
       <section className="timeline-content">
-        <PostForm />
+        <PostForm postable_id={userId} />
         <PostIndex posts={filteredPosts} />
       </section>
     </section>
