@@ -4,6 +4,7 @@ import Header from 'components/app/header';
 import LeftSiderbar from 'components/timeline/left-sidebar';
 import PostForm from 'components/post/post-form';
 import PostIndex from 'components/post/post-index';
+import TimelineHeader from 'components/timeline/header';
 import { fetchNewsFeed } from 'actions/users-actions';
 
 const Timeline = ({ userId }) => {
@@ -29,6 +30,7 @@ const Timeline = ({ userId }) => {
   return <>
     <Header />
     <section className="timeline-container">
+      <TimelineHeader userId={userId} />
       <LeftSiderbar />
       <section className="timeline-content">
         <PostForm postable_id={userId} />
