@@ -28,7 +28,7 @@ const CommentShow = ({ comment }) => {
     onMouseMove={() => showIcon(true)}
     onMouseLeave={() => {if (!isMenu) showIcon(false)}}
   >
-    <UserIcon className="comment-show-user-icon" />
+    <UserIcon className="comment-show-user-icon" userId={comment.commenter_id} />
     <span className="comment-show-comment">{comment.body}</span>
     <i ref={icon} className={`sprite comment-menu-icon ${isIcon ? 'comment-menu-icon-active' : ''}`}
       onClick={() => showMenu(true)}>

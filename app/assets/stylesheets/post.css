@@ -87,10 +87,6 @@ h3.post-form-tab-active {
   width: 40px;
   height: 40px;
   margin: 12px;
-  background-image: url('https://s3-us-west-1.amazonaws.com/bacefook-seeds/harry.jpg');
-  background-size: cover;
-  display: block;
-  border-radius: 50%;
 }
 
 .post-form > textarea {
