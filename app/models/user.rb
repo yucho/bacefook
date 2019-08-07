@@ -21,6 +21,7 @@ class User < ApplicationRecord
   has_many :friendships, dependent: :destroy
   has_many :friends, through: :friendships
   has_many :photos, as: :account
+  belongs_to :profile_photo, class_name: :Photo
 
   after_initialize :ensure_session_token
   
