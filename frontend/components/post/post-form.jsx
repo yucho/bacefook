@@ -5,16 +5,18 @@ import Textarea from 'react-textarea-autosize';
 import PostFormHeader from 'components/post/post-form-header';
 import ModalDarken from 'components/ui/modal-darken';
 import PostFormPhotos from 'components/post/post-form-photos';
+import UserIcon from 'components/ui/user-icon';
 import { createPost } from 'actions/posts-actions';
 
 const PostForm = ({postable_id = null, postable_type = 'User'}) => {
+  const userId = useSelector(state => state.session.id);
   const [body, setBody] = useState('');
   const [focus, setFocus] = useState(false);
   const [tab, setTab] = useState(0);
   const [files, setFiles] = useState({});
   const container = useRef(null);
   const dispatch = useDispatch();
-  postable_id = postable_id || useSelector(state => state.session.id);
+  postable_id = postable_id || userId;
 
   return (
     <section className={`post-form-container ${focus ? 'post-form-container-focus' : ''}`}
@@ -36,7 +38,7 @@ const PostForm = ({postable_id = null, postable_type = 'User'}) => {
         setFiles({});
         setFocus(false);
       }}>
-        <div className="post-form-circular-image"/>
+        <UserIcon className="post-form-circular-image" userId={userId} />
         <Textarea onChange={handleUpdate(setBody)} value={body} placeholder="What's on your mind?" />
         <Prompt when={!!body} message="You haven't finished your post yet. Do you want to leave without finishing?" />
         <PostFormPhotos active={tab === 1} files={files} setFiles={setFiles} />

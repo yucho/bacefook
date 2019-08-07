@@ -5,6 +5,7 @@ import ModalConfirm from 'components/ui/modal-confirm';
 import PostLikeComment from './post-like-comment';
 import PostStatLikeComment from './post-stat-like-comment';
 import PostPhotos from './post-photos';
+import UserIcon from 'components/ui/user-icon';
 import { destroyPost } from 'actions/posts-actions';
 import { appendAccessor } from 'util/context-util';
 
@@ -37,7 +38,7 @@ const PostShow = ({ poster, post }) => {
   return <PostShowContext.Provider value={appendAccessor({ post })}>
     <section className="post-container">
       <section className="post-header">
-        <div className="post-circular-image" />
+        <UserIcon className="post-circular-image" userId={poster_id} />
         <span className="post-author">{name}</span>
         {/* <time>{published_at}</time> */}
         <i ref={icon} className="sprite2 post-dropdown-menu-icon" onClick={set(toggle, true)}></i>

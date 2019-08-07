@@ -22,12 +22,16 @@ const App = () => {
     <Route path="/login" component={LoginPage} />
     <Route path="/timeline">
       {(arg) => {
+        const pathname = arg.location.pathname;
         if (!currentUser) {
           return <Redirect to="/" />
         } else if (arg.match.isExact === true) {
           return <Timeline userId={currentUser} />
+        } else if (pathname.startsWith('/timeline/')) {
+          const userId = parseInt(pathname.slice(10));
+          return !isNaN(userId) ? <Timeline userId={userId} /> : <Redirect to="/" />
         }
-        return currentUser ? <NewsFeed /> : <Splash />
+        return <Redirect to="/" />
       }}
     </Route>
     <Route path="/" >
