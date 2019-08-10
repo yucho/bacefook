@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :friend_requests, only: [:create, :index, :update, :destroy]
     resources :friends, only: [:index, :destroy]
     resources :likes, only: [:create, :index, :destroy]
+    resources :news_feed, only: [:create]
     resources :photos, only: [:create, :index, :show, :destroy]
     resources :posts, only: [:create, :index, :show, :update, :destroy] do
       resources :photos, only: [:index], controller: 'post_photos'
