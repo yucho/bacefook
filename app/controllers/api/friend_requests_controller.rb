@@ -21,8 +21,12 @@ class Api::FriendRequestsController < ApplicationController
   end
 
   def update
-    @friend_request.accept
-    head :no_content
+    if(current_user != @friend_request.friend)
+      render json: { errors: ["Request is not for you"] }, status: :unprocessable_entity
+    else
+      @friend_request.accept
+      head :no_content
+    end
   end
 
   def destroy
