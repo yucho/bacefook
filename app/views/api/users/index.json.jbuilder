@@ -3,7 +3,7 @@ unless logged_in?
 else
   json.message "You are logged in!"
 
-  users = current_user.friends << current_user
+  users = [current_user] + current_user.friends 
   ids = users.pluck(:id)
   posts = Post.where(<<-SQL, ids, ids)
     poster_type = 'User' AND (
