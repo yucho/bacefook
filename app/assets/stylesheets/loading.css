@@ -1,0 +1,20 @@
+.loading-posts {
+  height: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-posts-cube {
+  width: 12px;
+  height: 0;
+  margin: 0 1px;
+  border: 3px solid #4267b2;
+  border-radius: 3px;
+  animation: loading-cube-expand 1.5s infinite;
+}
+
+@keyframes loading-cube-expand {
+  0% { height: 0px }
+  50% { height: 24px }
+}

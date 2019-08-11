@@ -6,6 +6,7 @@ import LeftSidebar from 'components/news-feed/left-sidebar';
 import RightSidebar from 'components/news-feed/right-sidebar'
 import PostForm from 'components/post/post-form';
 import PostIndex from 'components/post/post-index';
+import LoadingPosts from 'components/ui/loading-posts';
 
 const NewsFeed = () => {
   const dispatch = useDispatch();
@@ -15,17 +16,20 @@ const NewsFeed = () => {
   const [prevTimestamp, setPrevTimestamp] = useState(null);
   const [fetchedEnoughPosts, setFetchedEnoughPosts] = useState(true);
   const [scrollBottomReached, setScrollBottomReached] = useState(true);
+  const [displayLoadingCubes, setDisplayLoadingCubes] = useState(false);
 
   useEffect(() => {
     if (fetchedEnoughPosts && scrollBottomReached) {
       setFetchedEnoughPosts(false);
       setScrollBottomReached(false);
+      setDisplayLoadingCubes(true);
       dispatch(fetchNewsFeed(prevTimestamp))
         .then((res) => {
           if (res.posts.length >= 10) {
             const timestamp = res.posts[res.posts.length - 1].published_at;
             setPrevTimestamp(timestamp);
             setFetchedEnoughPosts(true);
+            setDisplayLoadingCubes(false);
           }
         });
     }
@@ -49,7 +53,7 @@ const NewsFeed = () => {
       <section className="main-content-main-section">
         <PostForm />
         <PostIndex posts={posts}  />
-        {/* <div className="loading-posts" /> */}
+        {displayLoadingCubes && <LoadingPosts />}
       </section>
       <RightSidebar />
     </main>
