@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchNewsFeed } from 'actions/users-actions';
+import { fetchNewsFeed } from 'actions/news-feed-actions';
 import Header from 'components/app/header';
 import LeftSidebar from 'components/news-feed/left-sidebar';
 import RightSidebar from 'components/news-feed/right-sidebar'
@@ -12,7 +12,9 @@ const NewsFeed = () => {
   const users = useSelector((state) => state.users);
   const posts = useSelector(state => state.posts);
   useEffect(() => {
-    dispatch(fetchNewsFeed());
+    if (Object.keys(posts).length < 10) {
+      dispatch(fetchNewsFeed());
+    }
   }, []);
 
   return <>
