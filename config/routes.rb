@@ -12,6 +12,7 @@ Rails.application.routes.draw do
     resources :posts, only: [:create, :index, :show, :update, :destroy] do
       resources :photos, only: [:index], controller: 'post_photos'
     end
+    resources :timeline, only: [:create]
   end
 
   root to: 'static_pages#root'
