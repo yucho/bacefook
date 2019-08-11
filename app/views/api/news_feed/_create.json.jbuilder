@@ -16,7 +16,11 @@ photos = Photo.all
 users = User.all
 
 json.currentUser current_user.id
-json.users users
+json.users do
+  json.array! users do |user|
+    json.partial! "api/users/show", user: user
+  end
+end
 json.partial! "api/posts/index", posts: posts
 json.partial! "api/comments/index", comments: comments
 json.partial! "api/photos/index", photos: photos

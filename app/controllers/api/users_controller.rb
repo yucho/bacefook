@@ -7,6 +7,10 @@ class Api::UsersController < ApplicationController
     end
   end
 
+  def show
+    @user = User.find(params[:id])
+  end
+
   private
 
     def new_user_params
