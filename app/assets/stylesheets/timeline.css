@@ -65,3 +65,7 @@
 .timeline-content {
   width: 516px;
 }
+
+.timeline-container .post-form > textarea {
+  width: 444px;
+}
