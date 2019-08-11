@@ -1,6 +1,6 @@
 import { receiveAllData } from 'actions/application-actions';
 
-export const fetchNewsFeed = (timestamp = null) => (dispatch) => {
+export const fetchNewsFeed = (timestamp = null) => (dispatch) => (
   $.ajax({
     method: 'POST',
     url: '/api/news_feed',
@@ -8,5 +8,5 @@ export const fetchNewsFeed = (timestamp = null) => (dispatch) => {
   }).then(
     (data) => dispatch(receiveAllData(data)),
     (error) => console.log(error)
-  );
-};
+  )
+);

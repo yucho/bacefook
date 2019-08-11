@@ -11,4 +11,5 @@ export const receiveAllData = response => dispatch => {
   if (likes) dispatch(receiveLikes(likes));
   if (photos) dispatch(receivePhotos(photos));
   if (posts) dispatch(receivePosts(posts));
+  return response;
 };
