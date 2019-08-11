@@ -170,11 +170,11 @@ h3.post-form-tab-active {
   border: 1px solid  #dadde1;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
-  padding: 12px 12px 0;
 }
 
 .post-header {
   position: relative;
+  padding: 12px 12px 0;
 }
 
 .post-author {
@@ -188,8 +188,8 @@ i.post-dropdown-menu-icon {
   width: 20px;
   height: 20px;
   display: block;
-  margin-top: 10px;
-  margin-right: 7px;
+  margin-left: 7px;
+  margin-bottom: 10px;
   float: right;
 }
 
@@ -253,6 +253,11 @@ i.post-dropdown-menu-icon:hover {
   font-size: 14px;
   line-height: 1.4;
   white-space: pre-line;
+  padding: 0 12px;
+}
+
+.post-body p {
+  margin: 6px 0;
 }
 
 .post-photos-container {
@@ -290,6 +295,7 @@ i.post-dropdown-menu-icon:hover {
   display: flex;
   font-size: 14px;
   color: #6a6d74;
+  margin: 0 12px;
 }
 
 i.post-num-likes-icon {
