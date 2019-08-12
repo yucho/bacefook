@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Textarea from 'react-textarea-autosize';
+import Textarea from 'components/temp/react-textarea-autosize';
 import UserIcon from 'components/ui/user-icon';
 import { createComment } from 'actions/comments-actions'; 
 import { fetchPost } from 'actions/posts-actions';

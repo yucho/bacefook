@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Prompt } from 'react-router-dom'
-import Textarea from 'react-textarea-autosize';
+import Textarea from 'components/temp/react-textarea-autosize';
 import PostFormHeader from 'components/post/post-form-header';
 import ModalDarken from 'components/ui/modal-darken';
 import PostFormPhotos from 'components/post/post-form-photos';
