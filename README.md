@@ -1,5 +1,5 @@
 # Bacefook
-[Live Demo](https://bacefook-demo.herokuapp.com/)
+[Live Demo](https://bacefook.app)
 
 Bacefook is a Facebook clone implemented with Ruby on Rails and React. This single-page app allows users to register accounts, add friends, write posts, upload pictures, make comments, and hit likes.
 
